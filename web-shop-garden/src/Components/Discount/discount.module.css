@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-style: normal;
+}
+
+.backgrounImg {
+    background-image: url(../Media/Header-media/discount-background-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.discountDescription {
+    color: var(--txt-white, #FFF);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 110%;
+    max-width:1360px;
+    padding: 80px 40px 40px 40px;
+}
+
+.discountBtn {
+    border-radius: var(--radius-small, 6px);
+    background: var(--green, #393);
+    display: flex;
+    padding: 16px 56px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    margin: 0px 1182px 0px 40px;
+}
+
+.discountBtn a {
+    color: var(--txt-white, #FFF);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    text-decoration: none;
+}
+
+.discountBtnWrapper {
+    padding-bottom: 210px;
+}
+
+

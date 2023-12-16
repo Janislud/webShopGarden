@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: normal;
+}
+
+.FormDescription {
+    color: var(--txt-white, #FFF);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 110%;
+    margin-bottom: 24px;
+}
+
+.backGround {
+    border-radius: var(--radius-big, 12px);
+    background: linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
+    max-width: 1360px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 32px 32px 0px 32px;
+}
+.discountImgFormWrapper {
+display: flex;
+flex-wrap: wrap;
+gap: 0px 32px;
+}
+
+.formWrapper {
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+}
+
+.formLable {
+    border-radius: var(--radius-small, 6px);
+    border: 1px solid var(--white, #FFF);
+    padding: 16px 32px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.formInput {
+    flex: 1 0 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 26px */
+    background-color: #0B710B;
+    border: none;
+}
+
+.formInput::placeholder {
+    color: #fff;
+  }
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.fomrBtn {
+    margin-top: 16px;
+    border-radius: var(--radius-small, 6px);
+    background: var(--white, #FFF);
+    display: flex;
+    flex-wrap: wrap;
+    width: 516px;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+}
+
+.fomrBtn p {
+    color: var(--txt-black, #282828);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 26px */
+}
