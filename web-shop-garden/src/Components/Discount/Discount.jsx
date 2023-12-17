@@ -1,4 +1,5 @@
 import classes from './discount.module.css'
+import { Link } from 'react-router-dom';
 
 const Discount = () => {
     return <div className={classes.backgrounImg} >
