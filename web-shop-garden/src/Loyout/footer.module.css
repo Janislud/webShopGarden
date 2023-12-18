@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-style: normal;
+}
+
+.footerWrapper {
+    max-width: 1360px; /* Set the maximum width of the entire footer */
+    margin: 0 auto; /* Center the footer on the page */
+  }
+  
+  .footerContactWrapper {
+    display: grid;
+    grid-template-columns: minmax(780px, 780px) auto; /* First column with a width of 780px, second column with auto width (580px) */
+    gap: 20px; /* Adjust the gap between columns if needed */
+    margin-bottom: 40px;
+  }
+  
+  .footerWrapFirst,
+  .footerWrapSecond {
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* Adjust the gap between items within a column if needed */
+  }
+  
+  .footerCard,
+  .footerCardSecond {
+    border-radius: var(--radius-big, 12px);
+    background: var(--light-grey, #F1F3F4);
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+  }
+  
+  .column1 {
+    max-width: 780px;
+  }
+  
+  .column2 {
+    max-width: 580px;
+  }
+
+  .contactText {
+    color: var(--txt-black, #282828);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 110%;
+    margin: 80px 40px 40px 0px;
+  }
+
+  .footerContentText {
+    color: var(--txt-grey, #8B8B8B);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 26px */
+  }
+
+  .footerContentTextSecond {
+    color: var(--txt-black, #282828);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 110%; /* 44px */
+  }
+
+  .bottomPadding {
+    padding-bottom: 43px;
+  }
+  .socialHeight {
+    max-height: 44px;
+    gap: 16px;
+    display: flex;
+  }
+
+.gpsImg {
+  border-radius: var(--radius-big, 12px);
+  background: url(../Components/Media/Footer-media/map.svg) lightgray 50% / cover no-repeat;
+  height: 350px;
+  margin-bottom: 80px;
+}

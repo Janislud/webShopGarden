@@ -17,7 +17,7 @@
 
 .salesLine {
     border-bottom: 1px solid #DDD;
-    width: 1093px;
+    width: 1084px;
     margin-bottom: 20px;
 }
 
@@ -38,7 +38,7 @@
     margin-top: 30px;
     background-color: #fff;
     display: flex;
-    padding: 8px 16px;
+    padding: 8px 14px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -72,7 +72,7 @@
     color: var(--txt-black, #282828);
     text-overflow: ellipsis;
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 19px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;

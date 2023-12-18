@@ -1,3 +1,4 @@
+import Footer from "./Loyout/Footer";
 import Header from "./Loyout/Header";
 import Main from "./Pages/Main";
 
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
     <Header/>
     <Main/>
+    <Footer/>
     </div>
   );
 }
