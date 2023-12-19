@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './footer.module.css';
 import instagram from '../Components/Media/Footer-media/instagram-icon.svg';
 import whatsap from '../Components/Media/Footer-media/whatsapp-icon.svg';
+import Map from '../Components/Map/Map';
 
 const Footer = () => {
   return (
@@ -38,8 +39,9 @@ const Footer = () => {
       </div>
     </div>
   </div>
-  <div className={classes.gpsImg}>
-  </div>
+
+    <Map/>
+
 </div>
   );
 };
