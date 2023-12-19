@@ -1,5 +1,5 @@
 import classes from './discount.module.css'
-import { Link } from 'react-router-dom';
+
 
 const Discount = () => {
     return <div className={classes.backgrounImg} >
@@ -7,7 +7,6 @@ const Discount = () => {
         <div className={classes.discountBtnWrapper}>
         <button className={classes.discountBtn}><a href="#">Check out</a></button>
         </div>
-        
     </div>
 }
 

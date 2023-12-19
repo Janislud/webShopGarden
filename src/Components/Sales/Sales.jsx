@@ -4,9 +4,9 @@ import flower from '../Media/Sales-media/flower-basket-img.svg'
 import aquarium from '../Media/Sales-media/aquarium-lock-img.svg'
 import secateurs from '../Media/Sales-media/secateurs-img.svg'
 
-
 const Sales = () => {
     return <div className={classes.salesWrapper}>
+
         <div className={classes.salesTextWrapper}>
         <h2 className={classes.saleText}>Sale</h2>
         <div className={classes.salesLine}></div>
@@ -47,6 +47,7 @@ const Sales = () => {
             </div>
         </div>
         </div>
+        
     </div>
 }
 

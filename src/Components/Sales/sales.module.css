@@ -73,7 +73,6 @@
     text-overflow: ellipsis;
     font-family: 'Montserrat', sans-serif;
     font-size: 19px;
-    font-style: normal;
     font-weight: 500;
     line-height: 130%;
     margin: 0px 32px 16px 32px;
@@ -101,7 +100,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 500;
-    line-height: 130%; /* 26px */
+    line-height: 130%;
     text-decoration-line: line-through;
     margin-top: 15px;
 }

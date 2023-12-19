@@ -10,8 +10,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
+    margin:0 auto;
 }
 
 .discountDescription {

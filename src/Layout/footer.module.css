@@ -6,14 +6,14 @@
 }
 
 .footerWrapper {
-    max-width: 1360px; /* Set the maximum width of the entire footer */
-    margin: 0 auto; /* Center the footer on the page */
+    max-width: 1360px;
+    margin: 0 auto;
   }
   
   .footerContactWrapper {
     display: grid;
-    grid-template-columns: minmax(780px, 780px) auto; /* First column with a width of 780px, second column with auto width (580px) */
-    gap: 20px; /* Adjust the gap between columns if needed */
+    grid-template-columns: minmax(780px, 780px) auto;
+    gap: 20px;
     margin-bottom: 40px;
   }
   
@@ -21,7 +21,7 @@
   .footerWrapSecond {
     display: flex;
     flex-direction: column;
-    gap: 32px; /* Adjust the gap between items within a column if needed */
+    gap: 32px;
   }
   
   .footerCard,
@@ -57,9 +57,8 @@
     color: var(--txt-grey, #8B8B8B);
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 130%; /* 26px */
+    line-height: 130%;
   }
 
   .footerContentTextSecond {
@@ -67,7 +66,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
     font-weight: 600;
-    line-height: 110%; /* 44px */
+    line-height: 110%;
   }
 
   .bottomPadding {

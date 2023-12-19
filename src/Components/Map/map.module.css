@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 .mapWrapper {
     border-radius: var(--radius-big, 12px);
     background:cover no-repeat;
