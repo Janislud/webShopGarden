@@ -36,7 +36,7 @@ flex-wrap: wrap;
 flex-direction: column;
 }
 
-.formLable {
+.formLabel {
     border-radius: var(--radius-small, 6px);
     border: 1px solid var(--white, #FFF);
     padding: 16px 32px;

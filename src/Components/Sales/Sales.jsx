@@ -1,55 +1,59 @@
-import classes from '../Sales/sales.module.css'
-import bridge from '../Media/Sales-media/bridge-img.svg'
-import flower from '../Media/Sales-media/flower-basket-img.svg'
-import aquarium from '../Media/Sales-media/aquarium-lock-img.svg'
-import secateurs from '../Media/Sales-media/secateurs-img.svg'
+import { useEffect, useState } from 'react';
+import classes from '../Sales/sales.module.css';
 
 const Sales = () => {
-    return <div className={classes.salesWrapper}>
+    const [sales, setSales] = useState([]);
+    const [isExpanded, setIsExpanded] = useState(true);
 
-        <div className={classes.salesTextWrapper}>
-        <h2 className={classes.saleText}>Sale</h2>
-        <div className={classes.salesLine}></div>
-        <button className={classes.saleBtn}><a href="#">All sales</a></button>
-        </div>
+    useEffect(() => {
+        const fetchSales = async () => {
+            try {
+                const response = await fetch('http://localhost:3333/products/all');
+                const data = await response.json();
+                console.log(data);
+                setSales(data);
+            } catch (error) {
+                console.log("Error fetching product list");
+            }
+        };
 
-        <div className={classes.saleCardWrapper}>
-        <div className={classes.saleCard}>
-            <img className={classes.saleImg} src={bridge} alt="Decorative forged bridge" />
-            <h3 className={classes.saleCardText}>Decorative forged bridge</h3>
-            <div className={classes.salePriceWrapper}>
-                <p className={classes.realPrice}>$500</p>
-                <p className={classes.firstPrice}>$1000</p>
-            </div>
-        </div>
-        <div className={classes.saleCard}>
-            <img className={classes.saleImg} src={flower} alt="Flower basket" />
-            <h3 className={classes.saleCardText}>Flower basket</h3>
-            <div className={classes.salePriceWrapper}>
-                <p className={classes.realPrice}>$100</p>
-                <p className={classes.firstPrice}>$150</p>
-            </div>
-        </div>
-        <div className={classes.saleCard}>
-            <img className={classes.saleImg} src={aquarium} alt="Aquarium lock" />
-            <h3 className={classes.saleCardText}>Aquarium lock</h3>
-            <div className={classes.salePriceWrapper}>
-                <p className={classes.realPrice}>$150</p>
-                <p className={classes.firstPrice}>$200</p>
-            </div>
-        </div>
-        <div className={classes.saleCard}>
-            <img className={classes.saleImg} src={secateurs} alt="Secateurs" />
-            <h3 className={classes.saleCardText}>Secateurs</h3>
-            <div className={classes.salePriceWrapper}>
-                <p className={classes.realPrice}>$199</p>
-                <p className={classes.firstPrice}>$240</p>
-            </div>
-        </div>
-        </div>
-        
-    </div>
-}
+        fetchSales();
+    }, []);
 
+    const expandedHandler = () => {
+        setIsExpanded(!isExpanded);
+    };
+
+    const discountedSales = sales.filter((sale) => sale.discont_price !== null);
+
+    return (
+        <div className={classes.salesWrapper}>
+            <div className={classes.salesTextWrapper}>
+                <h2 className={classes.saleText}>Sale</h2>
+                <div className={classes.salesLine}></div>
+                <button className={classes.saleBtn} type="button" onClick={expandedHandler}>
+                    {isExpanded ? 'All Sales' : 'All Sales'}
+                </button>
+            </div>
+
+            {isExpanded && (
+                <div className={classes.saleCardWrapper}>
+                    {discountedSales.slice(0, 4).map((sale) => (
+                        <div key={sale.id} className={classes.saleCard}>
+                            <img className={classes.saleImg} src={`http://localhost:3333${sale.image}`} alt={sale.title} />
+                            <h2 className={classes.saleCardText}>{sale.title}</h2>
+
+                            <div className={classes.salePriceWrapper}>
+                                <p className={classes.realPrice}>${sale.discont_price}</p>
+                                
+                                {sale.discont_price ? <p className={classes.firstPrice}>${sale.price}</p> : null}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+};
 
 export default Sales;
