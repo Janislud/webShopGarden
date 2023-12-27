@@ -37,6 +37,7 @@
     flex-wrap: wrap;
     list-style: none;
     gap: 32px;
+    padding-top: 100px;
 }
 
 .mainNavigationList a {
@@ -67,17 +68,25 @@
         top: 59px;
     }
 
+    .mobileBtmSec {
+        display: block;
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+        z-index: 10;
+        top: 11px;
+    }
+
     .mainNavigationList {
         display: flex;
         flex-direction: column;
         align-items: center;
         position: fixed;
         left: auto;
-        top: 115px;
         bottom: 0;
         right: -150%;
         width: 282px;
-        height: 100vh;
+        height: 100%;
         z-index: 10;
         transition: right 1s ;
         background: #FFF;
@@ -86,6 +95,7 @@
 
     .active {
         right: 430px;
+        /* right: 0px; */
     }
 
     .headerText {
@@ -118,4 +128,70 @@
       .navigationWrapper {
         justify-content: flex-start;
       }
+
+
+      .bucket {
+        margin-left: auto;
+        margin-right: 50px;
+      }
+}
+
+/* ALL in */
+@media (min-width: 480px)  {
+    .mobileBtmSec {
+        display: none;
+    }
+    .mainNavigationList {
+        padding-top: 0px;
+        gap: 20px;
+    }   
+}
+
+@media (min-width:600px) {
+    .gardenLogo {
+        margin: 20px 0px 30px 20px;
+        width: 50px;
+      }
+}
+
+/* TABS */
+@media (min-width: 480px) and (max-width:776px) {
+
+    .mainNavigation {
+        margin: 54px auto 48px auto;
+    }
+
+    .bucketLogo {
+        margin: 36px auto 31px auto;
+      }
+
+      .gardenLogo {
+        margin: 20px 0px 30px 5px;
+        width: 50px;
+      }
+
+      .navigationWrapper {
+        justify-content: initial;
+      }
+
+      .headerText {
+        font-size: 15px;
+      }
+      
+}
+
+
+@media (min-width:776px)  {
+    .mainNavigation {
+        margin: 54px auto 48px auto;
+    }
+
+    .bucketLogo {
+        margin: 41px 40px 31px auto;
+    }
+
+    .gardenLogo {
+        width: 70px;
+    }
+    
 }

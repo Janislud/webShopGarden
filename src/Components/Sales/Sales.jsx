@@ -40,6 +40,11 @@ const Sales = () => {
                 <div className={classes.saleCardWrapper}>
                     {discountedSales.slice(0, 4).map((sale) => (
                         <div key={sale.id} className={classes.saleCard}>
+                            <div className={classes.saleBlock}>
+            {sale.price && sale.discont_price && (
+            `-${Math.round(((sale.price - sale.discont_price) / sale.price) * 100)}%`
+            )}
+        </div>
                             <img className={classes.saleImg} src={`http://localhost:3333${sale.image}`} alt={sale.title} />
                             <h2 className={classes.saleCardText}>{sale.title}</h2>
 
