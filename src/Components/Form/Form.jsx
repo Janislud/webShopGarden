@@ -32,7 +32,7 @@ const FormDiscount = () => {
     <div className={classes.backGround}>
       <h2 className={classes.FormDescription}>5% off on the first order</h2>
       <div className={classes.discountImgFormWrapper}>
-        <img src={discount} alt="discount form icon" />
+        <img className={classes.imgForm} src={discount} alt="discount form icon" />
         <div className={classes.formWrapper}>
         <form onSubmit={handleSubmit}>
           <label className={classes.formLabel}>

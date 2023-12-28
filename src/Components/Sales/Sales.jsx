@@ -55,6 +55,9 @@ const Sales = () => {
                             </div>
                         </div>
                     ))}
+                     <button className={classes.saleBtnAdaptive} type="button" onClick={expandedHandler}>
+                    {isExpanded ? 'All Sales' : 'All Sales'}
+                </button>
                 </div>
             )}
         </div>
