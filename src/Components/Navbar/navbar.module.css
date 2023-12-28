@@ -194,4 +194,7 @@
         width: 70px;
     }
     
+    .mainNavigationList {
+        gap: 36px;
+    }
 }
