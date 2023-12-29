@@ -12,16 +12,22 @@
   
   .footerContactWrapper {
     display: grid;
-    grid-template-columns: minmax(780px, 780px) auto;
+    /* grid-template-columns: minmax(780px, 780px) auto; */
+    grid-template-columns: 1.399fr 1fr;
     gap: 20px;
     margin-bottom: 40px;
   }
   
+  .footerWrapFirst {
+    max-width: 780px;
+  }
+
   .footerWrapFirst,
   .footerWrapSecond {
     display: flex;
     flex-direction: column;
     gap: 32px;
+  
   }
   
   .footerCard,
@@ -83,4 +89,16 @@
   background: url(../Components/Media/Footer-media/map.svg) lightgray 50% / cover no-repeat;
   height: 350px;
   margin-bottom: 80px;
+}
+
+
+@media (max-width:480px) {
+  .footerContactWrapper {
+    grid-template-columns: 1fr;
+  }
+
+.contactText {
+  margin: 40px 10px 40px 10px;
+ }
+  
 }

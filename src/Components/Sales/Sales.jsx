@@ -32,7 +32,7 @@ const Sales = () => {
                 <h2 className={classes.saleText}>Sale</h2>
                 <div className={classes.salesLine}></div>
                 <button className={classes.saleBtn} type="button" onClick={expandedHandler}>
-                    {isExpanded ? 'All Sales' : 'All Sales'}
+                <a className={classes.categoryBtnDescription} href="#">{isExpanded ? 'All Sales' : 'All Sales'}</a>
                 </button>
             </div>
 
@@ -55,11 +55,12 @@ const Sales = () => {
                             </div>
                         </div>
                     ))}
-                     <button className={classes.saleBtnAdaptive} type="button" onClick={expandedHandler}>
-                    {isExpanded ? 'All Sales' : 'All Sales'}
-                </button>
+            
                 </div>
             )}
+                <button className={classes.saleBtnAdaptive} type="button" onClick={expandedHandler}>
+                <a className={classes.categoryBtnDescription} href="#">{isExpanded ? 'All Sales' : 'All Sales'}</a>
+                </button>
         </div>
     );
 };
