@@ -18,20 +18,20 @@ const Navbar = () => {
         <header>
                 <div className={classes.navigationWrapper}>
                     <a href="#"><img className={classes.gardenLogo} src={gardenLogo} alt="" /></a>
-                    <div onClick={() => setNavigation(!navigation)} className={classes.mobileBtm}>
+                    <div onClick={() => toggleNavigation(!navigation)} className={classes.mobileBtm}>
                        {!navigation ? <AiOutlineMenu size={25}/> : ' '} 
                     </div>
                     <nav className={classes.mainNavigation}>
                    
                     <ul className={navigation ? [classes.mainNavigationList, classes.active].join(' ') : [classes.mainNavigationList]}>
-                    <div onClick={() => setNavigation(!navigation)} className={classes.mobileBtmSec}>
+                    <div onClick={() => toggleNavigation(!navigation)} className={classes.mobileBtmSec}>
                         <AiOutlineClose size={25}/> 
                     </div>
                         <li className={classes.list}>
-                            <a className={classes.headerText} href="#">Main Page</a>
+                            <a className={classes.headerText} href="../Pages/MainPage.jsx">Main Page</a>
                         </li>
                         <li>
-                            <a className={classes.headerText} href="#">Categories</a>
+                            <a className={classes.headerText} href="../Pages/CategoryPage.jsx">Categories</a>
                         </li>
                         <li>
                             <a className={classes.headerText} href="#">All products</a>

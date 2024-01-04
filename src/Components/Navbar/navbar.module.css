@@ -94,8 +94,8 @@
     }
 
     .active {
-        right: 430px;
-        /* right: 0px; */
+        right: 0px;
+      
     }
 
     .headerText {
