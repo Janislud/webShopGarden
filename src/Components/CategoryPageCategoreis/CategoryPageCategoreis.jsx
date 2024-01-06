@@ -29,7 +29,7 @@ const CategoriesPage = () => {
 
             <div className={classes.CategoryTextWrapper}>
                  <button className={classes.categoryBtn} onClick={toggleCategories}>
-                    <a className={classes.categoryBtnDescription} href="#">{isExpanded ? '1' : '1'}</a>
+                    <a className={classes.categoryBtnDescription} href="#">{isExpanded ? 'Main Page' : 'Main Page'}</a>
                 </button>
        
                 <div className={classes.line}></div>

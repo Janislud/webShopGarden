@@ -27,9 +27,9 @@
 }
 
 .line {
-    flex-grow: 1;
+    width: 16px;
     border-bottom: 1px solid #DDD;;
-    margin-bottom: 36px;
+    margin-bottom: 15px;
 }
 
 .categoryBtn {
@@ -42,7 +42,7 @@
     border: 1px solid var(--grey-divider, #DDD);
     background: white;
     height: 36px;
-    margin: 20px auto;
+    /* margin: 20px auto; */
 }
 
 .categoryBtnAdaptive {
