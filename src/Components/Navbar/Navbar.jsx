@@ -3,6 +3,7 @@ import classes from "./navbar.module.css";
 import gardenLogo from "../Media/Header-media/garden-shop-logo.svg"
 import bucketLogo from '../Media/Header-media/bucket-icon.svg'
 import {AiOutlineMenu,AiOutlineClose} from 'react-icons/ai'
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -28,10 +29,10 @@ const Navbar = () => {
                         <AiOutlineClose size={25}/> 
                     </div>
                         <li className={classes.list}>
-                            <a className={classes.headerText} href="../Pages/MainPage.jsx">Main Page</a>
+                            <Link className={classes.headerText} to="/main">Main Page</Link>
                         </li>
                         <li>
-                            <a className={classes.headerText} href="../Pages/CategoryPage.jsx">Categories</a>
+                            <Link className={classes.headerText} to="/category">Categories</Link>
                         </li>
                         <li>
                             <a className={classes.headerText} href="#">All products</a>
