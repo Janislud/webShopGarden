@@ -4,6 +4,8 @@ import Footer from "./Layout/Footer";
 import Header from "./Layout/Header";
 import Main from "./Pages/MainPage";
 import Categorys from "./Pages/CategoryPage";
+import SingleProductPage from "./Pages/SingelProductPage";
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
           </Route>
         </Switch>
         <Footer />
+        <SingleProductPage/>
       </div>
     </Router>
   );
