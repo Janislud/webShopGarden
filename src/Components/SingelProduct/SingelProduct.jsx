@@ -38,7 +38,6 @@ const SingleProduct = () => {
 
     return (
     
-
         <div className={classes.CategoryWrapper}>
 
             <div className={classes.CategoryTextWrapper}>
@@ -62,7 +61,12 @@ const SingleProduct = () => {
                             <h2 className={classes.categoryCardText}>{singleProduct.title}</h2>
                             <div>
                             <p>{singleProduct.discont_price}</p>
-                            <p>{singleProduct.price}</p>  
+                            <p>{singleProduct.price}</p> 
+                            <div className={classes.saleBlock}>
+                            {singleProduct.price && singleProduct.discont_price && (
+                             `-${Math.round(((singleProduct.price - singleProduct.discont_price) / singleProduct.price) * 100)}%`
+                            )}
+                            </div>
                             </div>
                             <div className={classes.conculation}>
                             <button onClick={handleMinusClick}>-</button>
