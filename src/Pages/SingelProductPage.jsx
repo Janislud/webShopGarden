@@ -8,9 +8,9 @@ const SingleProductPage = () => {
 
 return (
    <div>
-    <Header/>
+
     <SingleProduct/>
-    <Footer/>
+
    </div>
 )
 }
