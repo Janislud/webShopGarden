@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import classes from './singelProduct.module.css';
+import minus from '../Media/SinglePage-media/minus-icon.svg'
+import plus from '../Media/SinglePage-media/plus-icon.svg'
+import { Link } from "react-router-dom";
 
 const SingleProduct = () => {
     const [categories, setCategories] = useState([]);
     const [isExpanded, setIsExpanded] = useState(true);
     const [number,setNumber] = useState(1);
+    const [space, setSpace] = useState(false);
 
 
     useEffect(() => {
@@ -36,13 +40,19 @@ const SingleProduct = () => {
         }
     }
 
+    const switcherText = () => {
+        console.log('work');
+        event.preventDefault()
+        setSpace((prevSpace) => (!prevSpace))
+    }
+
     return (
     
         <div className={classes.CategoryWrapper}>
 
             <div className={classes.CategoryTextWrapper}>
                  <button className={classes.categoryBtn} onClick={toggleCategories}>
-                    <a className={classes.categoryBtnDescription} href="#">{isExpanded ? 'Main Page' : 'Main Page'}</a>
+                    <Link className={classes.categoryBtnDescription} to="/main">{isExpanded ? 'Main Page' : 'Main Page'}</Link>
                 </button>
        
                 <div className={classes.line}></div>
@@ -59,9 +69,9 @@ const SingleProduct = () => {
                             <img className={classes.categoryImg} src={`http://localhost:3333${singleProduct.image}`} alt={singleProduct.title} />
                             <div className={classes.singleCardDescription}>
                             <h2 className={classes.categoryCardText}>{singleProduct.title}</h2>
-                            <div>
-                            <p>{singleProduct.discont_price}</p>
-                            <p>{singleProduct.price}</p> 
+                            <div className={classes.PriceDiscountWrapper}>
+                            <p className={classes.textPriceWithDiscount}>${singleProduct.discont_price}</p>
+                            <p className={classes.textPriceFullPrice}>${singleProduct.price}</p> 
                             <div className={classes.saleBlock}>
                             {singleProduct.price && singleProduct.discont_price && (
                              `-${Math.round(((singleProduct.price - singleProduct.discont_price) / singleProduct.price) * 100)}%`
@@ -69,14 +79,17 @@ const SingleProduct = () => {
                             </div>
                             </div>
                             <div className={classes.conculation}>
-                            <button onClick={handleMinusClick}>-</button>
-                            <p>{number}</p>
-                            <button onClick={handlePlusClick}>+</button>
-                            <button>Add to Card</button>
+                            <button className={classes.btnMinus} onClick={handleMinusClick}>
+                            <img src={minus} className={classes.btnMinusImg} alt="minus-icon"></img></button>
+                            <p className={classes.canculateCountText}>{number}</p>
+                            <button className={classes.btnPlus} onClick={handlePlusClick}>
+                                <img src={plus} className={classes.btnPlusImg} alt="plus-icon" />
+                            </button>
+                            <button className={classes.btnAddToCard}><p className={classes.btnAddToCardText}>Add to Card</p></button>
                             </div>
-                            <h3>Description</h3>
-                            <p>{singleProduct.description}</p>
-                            <h3>Read more</h3>
+                            <h3 className={classes.productTextDescriptionMain}>Description</h3>
+                            <p className={`${classes.productTextDescriptionMain} ${space ? '' : classes.clamp}`}>{singleProduct.description}</p>
+                            <button onClick={switcherText} className={classes.productTextDescriptionReadMore}>Read more</button>
                             </div>
                           
                             

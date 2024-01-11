@@ -71,7 +71,6 @@
 .categoryCardWrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
     max-width: 1360px;
     margin-left: auto;
     margin-right: auto;
@@ -80,29 +79,190 @@
 
 .categoryCard {
     display: flex;
-    max-width: 316px;
-    align-items: center;
-    gap: 16px;
-    flex-shrink: 0;
+    flex-wrap: wrap;
+    gap: 32px;
+    flex-shrink: 1;
 }
 
 .categoryCardText {
     color: var(--txt-black, #282828);
-    text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 130%;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: 1.2px;
 }
 
 .categoryImg {
-    width: 316px;
-    height: 350px;
+    width: 620px;
+    height: 100%;
     border-radius: var(--radius-big, 12px);
-    background:lightgray 50% / cover no-repeat;
+  
 
 
 }
+
+.textPriceWithDiscount {
+    color: var(--txt-black, #282828);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 110%;
+
+}
+
+.textPriceFullPrice {
+    color: var(--txt-grey, #8B8B8B);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    text-decoration: line-through;
+    margin: 17px 0px 0px 32px;
+}
+
+.PriceDiscountWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 32px 0px 0px 0px;
+
+}
+.singleCardDescription {
+    max-width: 548px;
+    width: 100%;
+    margin: 0px 0px 0px 32px;
+}
+
+.saleBlock {
+    color: var(--txt-white, #FFF);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+    border-radius: var(--radius-small, 6px);
+    background: var(--green, #393);
+    margin: 0px 1px 40px 16px;
+    padding: 5px 10px;
+}
+
+.btnMinus {
+    display: flex;
+    width: 58px;
+    height: 58px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-small, 6px);
+    border: 1px solid var(--grey-divider, #DDD);  
+}
+
+.btnMinusImg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.btnPlus {
+    display: flex;
+    width: 58px;
+    height: 58px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-small, 6px);
+    border: 1px solid var(--grey-divider, #DDD);
+}
+
+.btnPlusImg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.canculateCountText {
+    display: flex;
+    width: 96px;
+    height: 58px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--grey-divider, #DDD);
+    border-bottom: 1px solid var(--grey-divider, #DDD);
+
+    color: var(--txt-black, #282828);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 26px */
+}
+
+.btnAddToCard {
+    display: flex;
+    max-width: 316px;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: var(--radius-small, 6px);
+    background: var(--green, #393);
+    border: none;
+    margin-left: 32px;
+}
+
+.btnAddToCardText {
+    color: var(--txt-white, #FFF);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    margin: 0px 32px 0px 32px
+}
+
+.conculation {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 32px 0px 0px 0px;
+}
+
+.productTextDescription {
+    color: var(--txt-black, #282828);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+}
+
+.productTextDescriptionMain {
+    color: var(--txt-black, #282828);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    margin-top: 32px;
+}
+
+.productTextDescriptionReadMore {
+    color: var(--txt-black, #282828);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    text-decoration-line: underline;
+    background: none;
+    border: none;
+    margin-top: 16px;
+}
+
+.clamp {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
 @media (min-width:480px) {
     .categoryBtnAdaptive {
