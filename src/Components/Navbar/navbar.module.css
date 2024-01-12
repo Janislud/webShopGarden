@@ -58,6 +58,25 @@
     display: none;
 }
 
+.themeSwitcherLight {
+    margin-left: 25px;
+    border: none;
+    background-color: white;
+}
+
+.header {
+    background-color: white;
+}
+
+.lightTheme {
+    background-color: #fff;
+    color: #000;
+}
+
+.darkTheme {
+    background-color: #333;
+    color: #fff;
+}
 @media (max-width:480px) {
     .mobileBtm{
         display: block;

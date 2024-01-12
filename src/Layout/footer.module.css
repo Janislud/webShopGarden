@@ -56,7 +56,7 @@
     font-size: 64px;
     font-weight: 700;
     line-height: 110%;
-    margin: 80px 40px 40px 0px;
+    padding: 80px 40px 40px 0px;
   }
 
   .footerContentText {
@@ -89,6 +89,16 @@
   background: url(../Components/Media/Footer-media/map.svg) lightgray 50% / cover no-repeat;
   height: 350px;
   margin-bottom: 80px;
+}
+
+.lightTheme {
+  background-color: #fff;
+  color: #000;
+}
+
+.darkTheme {
+  background-color: #333;
+  color: #fff;
 }
 
 

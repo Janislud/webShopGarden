@@ -3,11 +3,13 @@ import classes from './footer.module.css';
 import instagram from '../Components/Media/Footer-media/instagram-icon.svg';
 import whatsap from '../Components/Media/Footer-media/whatsapp-icon.svg';
 import Map from '../Components/Map/Map';
+import { useApi } from '../contexts';
 
 const Footer = () => {
+ const {theme} = useApi()
   return (
-<footer>
-    <div className={classes.footerWrapper}>
+<footer className={`${classes.footer} ${theme === 'light' ? classes.lightTheme : classes.darkTheme}`}>
+    <div className={`${classes.footerWrapper} ${theme === 'light' ? classes.lightTheme : classes.darkTheme}`}>
           <h2 className={classes.contactText}>Contact</h2>
 
           <div className={classes.footerContactWrapper}>

@@ -4,20 +4,26 @@ import gardenLogo from "../Media/Header-media/garden-shop-logo.svg"
 import bucketLogo from '../Media/Header-media/bucket-icon.svg'
 import {AiOutlineMenu,AiOutlineClose} from 'react-icons/ai'
 import { Link } from "react-router-dom";
+import { useApi } from "../../contexts";
 
 
 const Navbar = () => {
-
-    const [navigation,setNavigation] = useState(false)
+    const [navigation,setNavigation] = useState(false);
+    const {theme, toggleTheme} = useApi();
 
     const toggleNavigation = () => {
         setNavigation(!navigation);
     };
 
+    const toggleThemeSwitch = () => {
+        toggleTheme();
+        console.log('Theme switched:', theme);
+    }
+
    
     return (
-        <header>
-                <div className={classes.navigationWrapper}>
+        <header className={`${classes.header} ${theme === 'light' ? classes.lightTheme : classes.darkTheme}`}>
+                <div className={`${classes.navigationWrapper} ${theme === 'light' ? classes.lightTheme : classes.darkTheme}`}>
                     <a href="#"><img className={classes.gardenLogo} src={gardenLogo} alt="" /></a>
                     <div onClick={() => toggleNavigation(!navigation)} className={classes.mobileBtm}>
                        {!navigation ? <AiOutlineMenu size={25}/> : ' '} 
@@ -41,6 +47,10 @@ const Navbar = () => {
                             <a className={classes.headerText} href="#">All sales</a>
                         </li>
                     </ul>
+
+                    <button onClick={toggleThemeSwitch} className={classes.themeSwitcherLight}>
+                    {theme === 'light' ? 'Light Theme' : 'Dark Theme'}
+                    </button>
                   
                     </nav>
                     <a className={classes.bucket} href="#"><img className={classes.bucketLogo} src={bucketLogo} alt="" /></a>

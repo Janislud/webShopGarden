@@ -4,12 +4,13 @@ import Footer from "./Layout/Footer";
 import Header from "./Layout/Header";
 import Main from "./Pages/MainPage";
 import Categorys from "./Pages/CategoryPage";
-import SingleProductPage from "./Pages/SingelProductPage";
+import { ApiProvider } from "./contexts";
 
 
 function App() {
   return (
     <Router>
+      <ApiProvider>
       <div className="App">
         <Header />
         <Switch>
@@ -22,6 +23,7 @@ function App() {
         </Switch>
         <Footer />
       </div>
+      </ApiProvider>
     </Router>
   );
 }
