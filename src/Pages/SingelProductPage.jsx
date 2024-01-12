@@ -8,9 +8,7 @@ const SingleProductPage = () => {
 
 return (
    <div>
-
     <SingleProduct/>
-
    </div>
 )
 }

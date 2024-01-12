@@ -21,7 +21,6 @@ function App() {
           </Route>
         </Switch>
         <Footer />
-        <SingleProductPage/>
       </div>
     </Router>
   );
