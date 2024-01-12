@@ -88,7 +88,7 @@
   border-radius: var(--radius-big, 12px);
   background: url(../Components/Media/Footer-media/map.svg) lightgray 50% / cover no-repeat;
   height: 350px;
-  margin-bottom: 80px;
+  
 }
 
 .lightTheme {

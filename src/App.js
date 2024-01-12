@@ -14,7 +14,7 @@ function App() {
           <Header />
           <Switch>
             <Route path="/main" component={Main} />
-            <Route path="/category" component={Categorys} />
+            <Route path="/category" component={Categorys}/>
             <Redirect from="/" to="/main" />
           </Switch>
           <Footer />
