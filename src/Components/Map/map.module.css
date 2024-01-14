@@ -8,8 +8,6 @@
     border-radius: var(--radius-big, 12px);
     background:cover no-repeat;
     max-width: 1360px;
-    margin-bottom: 80px;
-
   }
   
   .iframeStyles {

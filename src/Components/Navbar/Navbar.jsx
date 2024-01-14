@@ -35,16 +35,16 @@ const Navbar = () => {
                         <AiOutlineClose size={25}/> 
                     </div>
                         <li className={classes.list}>
-                            <Link className={classes.headerText} to="/main">Main Page</Link>
+                            <Link className={`${classes.headerText} ${theme === 'light' ? classes.lightTheme : classes.darkTheme} `} to="/main">Main Page</Link>
                         </li>
                         <li>
-                            <Link className={classes.headerText} to="/category">Categories</Link>
+                            <Link className={`${classes.headerText} ${theme === 'light' ? classes.lightTheme : classes.darkTheme}`} to="/category">Categories</Link>
                         </li>
                         <li>
-                            <a className={classes.headerText} href="#">All products</a>
+                            <a className={`${classes.headerText} ${theme === 'light' ? classes.lightTheme : classes.darkTheme}`} href="#">All products</a>
                         </li>
                         <li>
-                            <a className={classes.headerText} href="#">All sales</a>
+                            <a className={`${classes.headerText} ${theme === 'light' ? classes.lightTheme : classes.darkTheme}`} href="#">All sales</a>
                         </li>
                     </ul>
 
