@@ -1,64 +1,125 @@
 import React, { useState } from "react";
-import classes from "./navbar.module.css";
-import gardenLogo from "../Media/Header-media/garden-shop-logo.svg"
-import bucketLogo from '../Media/Header-media/bucket-icon.svg'
-import {AiOutlineMenu,AiOutlineClose} from 'react-icons/ai'
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useApi } from "../../contexts";
-
+import bucketLogoWhite from "../Media/Header-media/bucket-icon-white.svg";
+import bucketLogo from "../Media/Header-media/bucket-icon.svg";
+import gardenLogo from "../Media/Header-media/garden-shop-logo.svg";
+import classes from "./navbar.module.css";
 
 const Navbar = () => {
-    const [navigation,setNavigation] = useState(false);
-    const {theme, toggleTheme} = useApi();
+  const [navigation, setNavigation] = useState(false);
+  const { theme, toggleTheme } = useApi();
 
-    const toggleNavigation = () => {
-        setNavigation(!navigation);
-    };
+  const toggleNavigation = () => {
+    setNavigation(!navigation);
+  };
 
-    const toggleThemeSwitch = () => {
-        toggleTheme();
-        console.log('Theme switched:', theme);
-    }
+  const toggleThemeSwitch = () => {
+    toggleTheme();
+    console.log("Theme switched:", theme);
+  };
 
-   
-    return (
-        <header className={`${classes.header} ${theme === 'light' ? classes.lightTheme : classes.darkTheme}`}>
-                <div className={`${classes.navigationWrapper} ${theme === 'light' ? classes.lightTheme : classes.darkTheme}`}>
-                    <a href="#"><img className={classes.gardenLogo} src={gardenLogo} alt="" /></a>
-                    <div onClick={() => toggleNavigation(!navigation)} className={classes.mobileBtm}>
-                       {!navigation ? <AiOutlineMenu size={25}/> : ' '} 
-                    </div>
-                    <nav className={classes.mainNavigation}>
-                   
-                    <ul className={navigation ? [classes.mainNavigationList, classes.active].join(' ') : [classes.mainNavigationList]}>
-                    <div onClick={() => toggleNavigation(!navigation)} className={classes.mobileBtmSec}>
-                        <AiOutlineClose size={25}/> 
-                    </div>
-                        <li className={classes.list}>
-                            <Link className={`${classes.headerText} ${theme === 'light' ? classes.lightTheme : classes.darkTheme} `} to="/main">Main Page</Link>
-                        </li>
-                        <li>
-                            <Link className={`${classes.headerText} ${theme === 'light' ? classes.lightTheme : classes.darkTheme}`} to="/category">Categories</Link>
-                        </li>
-                        <li>
-                            <a className={`${classes.headerText} ${theme === 'light' ? classes.lightTheme : classes.darkTheme}`} href="#">All products</a>
-                        </li>
-                        <li>
-                            <a className={`${classes.headerText} ${theme === 'light' ? classes.lightTheme : classes.darkTheme}`} href="#">All sales</a>
-                        </li>
-                    </ul>
+  return (
+    <header
+      className={`${classes.header} ${
+        theme === "light" ? classes.lightTheme : classes.darkTheme
+      }`}
+    >
+      <div
+        className={`${classes.navigationWrapper} ${
+          theme === "light" ? classes.lightTheme : classes.darkTheme
+        }`}
+      >
+        <a href="#">
+          <img className={classes.gardenLogo} src={gardenLogo} alt="" />
+        </a>
+        <div
+          onClick={() => toggleNavigation(!navigation)}
+          className={classes.mobileBtm}
+        >
+          {!navigation ? <AiOutlineMenu size={25} /> : " "}
+        </div>
+        <nav className={classes.mainNavigation}>
+          <ul
+            className={
+              navigation
+                ? [classes.mainNavigationList, classes.active].join(" ")
+                : [classes.mainNavigationList]
+            }
+          >
+            <div
+              onClick={() => toggleNavigation(!navigation)}
+              className={classes.mobileBtmSec}
+            >
+              <AiOutlineClose size={25} />
+            </div>
+            <li className={classes.list}>
+              <Link
+                className={`${classes.headerText} ${
+                  theme === "light" ? classes.lightTheme : classes.darkTheme
+                } `}
+                to="/main"
+              >
+                Main Page
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={`${classes.headerText} ${
+                  theme === "light" ? classes.lightTheme : classes.darkTheme
+                }`}
+                to="/category"
+              >
+                Categories
+              </Link>
+            </li>
+            <li>
+              <a
+                className={`${classes.headerText} ${
+                  theme === "light" ? classes.lightTheme : classes.darkTheme
+                }`}
+                href="#"
+              >
+                All products
+              </a>
+            </li>
+            <li>
+              <a
+                className={`${classes.headerText} ${
+                  theme === "light" ? classes.lightTheme : classes.darkTheme
+                }`}
+                href="#"
+              >
+                All sales
+              </a>
+            </li>
+          </ul>
 
-                    <button onClick={toggleThemeSwitch} className={classes.themeSwitcherLight}>
-                    {theme === 'light' ? 'Light Theme' : 'Dark Theme'}
-                    </button>
-                  
-                    </nav>
-                    <a className={classes.bucket} href="#"><img className={classes.bucketLogo} src={bucketLogo} alt="" /></a>
-                 
-                    
-                </div>
-            </header>
-    )
-}
+          <button
+            onClick={toggleThemeSwitch}
+            className={classes.themeSwitcherLight}
+          >
+            {theme === "light" ? "Light Theme" : "Dark Theme"}
+          </button>
+        </nav>
+        <a
+          className={`${classes.bucket} ${
+            theme === "light" ? classes.lightTheme : classes.darkTheme
+          }`}
+          href="#"
+        >
+          <img
+            className={`${classes.bucketLogo} ${
+              theme === "light" ? classes.lightTheme : classes.darkTheme
+            }`}
+            src={theme === "light" ? bucketLogo : bucketLogoWhite}
+            alt=""
+          />
+        </a>
+      </div>
+    </header>
+  );
+};
 
 export default Navbar;
