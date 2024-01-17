@@ -64,6 +64,7 @@
   border-radius: 12px;
   border: 1px solid #ddd;
   max-width: 315px;
+  text-decoration: none;
 }
 
 .saleCardText {

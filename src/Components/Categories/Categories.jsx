@@ -5,7 +5,6 @@ import classes from "./category.module.css";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
-  const [isExpanded, setIsExpanded] = useState(true);
   const { theme } = useApi();
 
   useEffect(() => {
@@ -23,10 +22,6 @@ const Categories = () => {
     fetchCategories();
   }, []);
 
-  const toggleCategories = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   return (
     <div className={classes.CategoryWrapper}>
       <div className={classes.CategoryTextWrapper}>
@@ -42,15 +37,15 @@ const Categories = () => {
 
         <button className={classes.categoryBtn}>
           <Link className={classes.categoryBtnDescription} to="/category">
-            {isExpanded ? "All Categoris" : "All Categoris"}
+            {"All Categoris"}
           </Link>
         </button>
       </div>
 
-      {isExpanded && (
+      {
         <div className={classes.categoryCardWrapper}>
           {categories.slice(0, 4).map((category) => (
-            <div key={category.id} className={classes.categoryCard}>
+            <Link key={category.id} className={classes.categoryCard} to={"#"}>
               <img
                 className={classes.categoryImg}
                 src={`http://localhost:3333${category.image}`}
@@ -63,16 +58,13 @@ const Categories = () => {
               >
                 {category.title}
               </h2>
-            </div>
+            </Link>
           ))}
         </div>
-      )}
-      <button
-        className={classes.categoryBtnAdaptive}
-        onClick={toggleCategories}
-      >
+      }
+      <button className={classes.categoryBtnAdaptive}>
         <Link className={classes.categoryBtnDescription} to="/category">
-          {isExpanded ? "All Categoris" : "All Categoris"}
+          {"All Categoris"}
         </Link>
       </button>
     </div>

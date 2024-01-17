@@ -1,9 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {
+  Redirect,
+  Route,
+  BrowserRouter as Router,
+  Switch,
+} from "react-router-dom";
+import SingleProduct from "./Components/SingelProduct/SingelProduct";
 import Footer from "./Layout/Footer";
 import Header from "./Layout/Header";
-import Main from "./Pages/MainPage";
 import Categorys from "./Pages/CategoryPage";
+import Main from "./Pages/MainPage";
 import { ApiProvider } from "./contexts";
 
 function App() {
@@ -14,7 +20,8 @@ function App() {
           <Header />
           <Switch>
             <Route path="/main" component={Main} />
-            <Route path="/category" component={Categorys}/>
+            <Route path="/category" component={Categorys} />
+            <Route path="/single-product" component={SingleProduct} />
             <Redirect from="/" to="/main" />
           </Switch>
           <Footer />

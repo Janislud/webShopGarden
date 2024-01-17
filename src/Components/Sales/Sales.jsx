@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 import { useApi } from "../../contexts";
 import classes from "../Sales/sales.module.css";
 
 const Sales = () => {
   const [sales, setSales] = useState([]);
-  const [isExpanded, setIsExpanded] = useState(true);
+
   const { theme } = useApi();
 
   useEffect(() => {
@@ -22,10 +23,6 @@ const Sales = () => {
     fetchSales();
   }, []);
 
-  const expandedHandler = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   const discountedSales = sales.filter((sale) => sale.discont_price !== null);
 
   return (
@@ -39,21 +36,21 @@ const Sales = () => {
           Sale
         </h2>
         <div className={classes.salesLine}></div>
-        <button
-          className={classes.saleBtn}
-          type="button"
-          onClick={expandedHandler}
-        >
+        <button className={classes.saleBtn} type="button">
           <a className={classes.categoryBtnDescription} href="#">
-            {isExpanded ? "All Sales" : "All Sales"}
+            {"All Sales"}
           </a>
         </button>
       </div>
 
-      {isExpanded && (
+      {
         <div className={classes.saleCardWrapper}>
           {discountedSales.slice(0, 4).map((sale) => (
-            <div key={sale.id} className={classes.saleCard}>
+            <Link
+              key={sale.id}
+              className={classes.saleCard}
+              to={`/single-product/${sale.id}`}
+            >
               <div className={classes.saleBlock}>
                 {sale.price &&
                   sale.discont_price &&
@@ -95,17 +92,13 @@ const Sales = () => {
                   </p>
                 ) : null}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-      )}
-      <button
-        className={classes.saleBtnAdaptive}
-        type="button"
-        onClick={expandedHandler}
-      >
+      }
+      <button className={classes.saleBtnAdaptive} type="button">
         <a className={classes.categoryBtnDescription} href="#">
-          {isExpanded ? "All Sales" : "All Sales"}
+          {"All Sales"}
         </a>
       </button>
     </div>
