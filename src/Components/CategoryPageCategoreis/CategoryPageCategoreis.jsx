@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useApi } from "../../contexts";
 import classes from "./categoryPageCategories.module.css";
 
 const CategoriesPage = () => {
   const [categories, setCategories] = useState([]);
-  const [isExpanded, setIsExpanded] = useState(true);
   const { theme } = useApi();
   useEffect(() => {
     const fetchCategories = async () => {
@@ -21,10 +21,6 @@ const CategoriesPage = () => {
     fetchCategories();
   }, []);
 
-  const toggleCategories = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   return (
     <div
       className={`${classes.CategoryWrapper} ${
@@ -32,22 +28,22 @@ const CategoriesPage = () => {
       }`}
     >
       <div className={classes.CategoryTextWrapper}>
-        <button className={classes.categoryBtn} onClick={toggleCategories}>
-          <a className={classes.categoryBtnDescription} href="#">
-            {isExpanded ? "Main Page" : "Main Page"}
-          </a>
+        <button className={classes.categoryBtn}>
+          <Link className={classes.categoryBtnDescription} to={"/main"}>
+            {"Main Page"}
+          </Link>
         </button>
 
         <div className={classes.line}></div>
 
-        <button className={classes.categoryBtn} onClick={toggleCategories}>
-          <a className={classes.categoryBtnDescription} href="#">
-            {isExpanded ? "Categoris" : "Categoris"}
-          </a>
+        <button className={classes.categoryBtn}>
+          <Link className={classes.categoryBtnDescription} to={"/category"}>
+            {"Categoris"}
+          </Link>
         </button>
       </div>
 
-      {isExpanded && (
+      {
         <div
           className={`${classes.categoryCardWrapper} ${
             theme === "light" ? classes.lightTheme : classes.darkTheme
@@ -70,14 +66,11 @@ const CategoriesPage = () => {
             </div>
           ))}
         </div>
-      )}
-      <button
-        className={classes.categoryBtnAdaptive}
-        onClick={toggleCategories}
-      >
-        <a className={classes.categoryBtnDescription} href="#">
-          {isExpanded ? "All Categoris" : "All Categoris"}
-        </a>
+      }
+      <button className={classes.categoryBtnAdaptive}>
+        <Link className={classes.categoryBtnDescription} to={"/category"}>
+          {"All Categoris"}
+        </Link>
       </button>
     </div>
   );

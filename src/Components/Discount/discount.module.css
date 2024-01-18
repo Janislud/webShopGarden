@@ -1,94 +1,78 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-style: normal;
-}
-
 .backgrounImg {
-    background-image: url(../Media/Header-media/discount-background-img.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    max-width: 1440px;
-    margin:0 auto;
-    background-position: center center;
+  background-image: url(../Media/Header-media/discount-background-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-position: center center;
 }
 
 .discountDescription {
-    color: var(--txt-white, #FFF);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    line-height: 110%;
-    max-width:1360px;
-    padding: 80px 40px 40px 40px;
+  color: var(--txt-white, #fff);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 110%;
+  max-width: 1360px;
+  padding: 80px 40px 40px 40px;
 }
 
 .discountBtn {
-    border-radius: var(--radius-small, 6px);
-    background: var(--green, #393);
-    display: flex;
-    padding: 16px 56px;
-    justify-content: center;
-    align-items: center;
-    width: 218px;
-    border: none;
-    margin: 0px 1182px 0px 40px;
+  border-radius: var(--radius-small, 6px);
+  background: var(--green, #393);
+  display: flex;
+  padding: 16px 56px;
+  justify-content: center;
+  align-items: center;
+  width: 218px;
+  border: none;
+  margin: 0px 1182px 0px 40px;
 }
 
 .discountBtn a {
-    color: var(--txt-white, #FFF);
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 130%;
-    text-decoration: none;
+  color: var(--txt-white, #fff);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 130%;
+  text-decoration: none;
 }
 
 .discountBtnWrapper {
-    padding-bottom: 210px;
+  padding-bottom: 210px;
 }
 
-
-
-
-@media (max-width:480px) {
-    .discountDescription {
-        font-size: 52px;
-        padding: 50px 20px 40px 20px;
-    }
+@media (max-width: 480px) {
+  .discountDescription {
+    font-size: 52px;
+    padding: 50px 20px 40px 20px;
+  }
 }
 
-
-
-@media (min-width:600px) {
-  
+@media (min-width: 600px) {
 }
 
 /* TABS */
-@media (min-width: 480px) and (max-width:776px) {
-    .discountDescription {
-        font-size: 60px;
-    }
-      
+@media (min-width: 480px) and (max-width: 776px) {
+  .discountDescription {
+    font-size: 60px;
+  }
 }
 
-@media (min-width:776px) {
-    .discountDescription {
-        font-size: 68px;
-        
-    }
+@media (min-width: 776px) {
+  .discountDescription {
+    font-size: 68px;
+  }
 }
-
 
 @media (min-width: 1000px) {
-    .discountDescription {
-        font-size: 90px;  
-    }
+  .discountDescription {
+    font-size: 90px;
+  }
 }
 
-@media (min-width:1440px) {
-    .discountDescription {
-        font-size: 96px;  
-    }
+@media (min-width: 1440px) {
+  .discountDescription {
+    font-size: 96px;
+  }
 }

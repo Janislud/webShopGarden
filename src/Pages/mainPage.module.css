@@ -1,9 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-style: normal;
+}
+
 .lightTheme {
-    background-color: #fff;
-    color: #000;
+  background-color: #fff;
+  color: #000;
 }
 
 .darkTheme {
-    background-color: #333;
-    color: #fff;
+  background-color: #333;
+  color: #fff;
 }

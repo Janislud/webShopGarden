@@ -1,219 +1,202 @@
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-style: normal;
-    font-weight: 500;
-}
-
 .gardenLogo {
- width: 70px;
- height: 70px;
- flex-shrink: 0;
- margin: 30px 0px 28px 40px;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  margin: 30px 0px 28px 40px;
 }
 
 .navigationWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1440px;
-    margin: 0 auto;
-    border-bottom: 1px solid var(--grey-divider, #DDD);
-    background: var(--white, #FFF);
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--grey-divider, #ddd);
+  background: var(--white, #fff);
+  align-items: center;
+  justify-content: space-between;
 }
 
 .mainNavigation {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 54px 0px 48px 351px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 54px 0px 48px 351px;
 }
 
 .mainNavigationList {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    gap: 32px;
-    padding-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 32px;
+  padding-top: 100px;
 }
 
 .mainNavigationList a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .bucketLogo {
-    margin: 41px 40px 31px 373px;
+  margin: 41px 40px 31px 373px;
 }
 .headerText {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--txt-black, #282828);
-    font-size: 20px;
-    line-height: 130%;
+  font-family: "Montserrat", sans-serif;
+  color: var(--txt-black, #282828);
+  font-size: 20px;
+  line-height: 130%;
 }
 
 .mobileBtm {
-    display: none;
+  display: none;
 }
 
 .themeSwitcherLight {
-    margin-left: 25px;
-    border: none;
-    background-color: white;
+  margin-left: 25px;
+  border: none;
+  background-color: white;
 }
 
 .header {
-    background-color: white;
+  background-color: white;
 }
 
 .lightTheme {
-    background-color: #fff;
-    color: #000;
+  background-color: #fff;
+  color: #000;
 }
 
 .darkTheme {
-    background-color: #333;
-    color: #fff;
+  background-color: #333;
+  color: #fff;
 }
-@media (max-width:480px) {
-    .mobileBtm{
-        display: block;
-        position: absolute;
-        right: 10px;
-        cursor: pointer;
-        z-index: 10;
-        top: 59px;
-    }
+@media (max-width: 480px) {
+  .mobileBtm {
+    display: block;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    z-index: 10;
+    top: 59px;
+  }
 
-    .mobileBtmSec {
-        display: block;
-        position: absolute;
-        right: 10px;
-        cursor: pointer;
-        z-index: 10;
-        top: 11px;
-    }
+  .mobileBtmSec {
+    display: block;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    z-index: 10;
+    top: 11px;
+  }
 
-    .mainNavigationList {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: fixed;
-        left: auto;
-        bottom: 0;
-        right: -150%;
-        width: 282px;
-        height: 100%;
-        z-index: 10;
-        transition: right 1s ;
-        background: #FFF;
-        
-    }
+  .mainNavigationList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: auto;
+    bottom: 0;
+    right: -150%;
+    width: 282px;
+    height: 100%;
+    z-index: 10;
+    transition: right 1s;
+    background: #fff;
+  }
 
-    .active {
-        right: 0px;
-      
-    }
+  .active {
+    right: 0px;
+  }
 
-    .headerText {
-        color: var(--txt-black, #282828);
-        font-family: 'Montserrat', sans-serif;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 130%;
-    }
+  .headerText {
+    color: var(--txt-black, #282828);
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 130%;
+  }
 
-    .gardenLogo {
-        order: 1; /* Устанавливаем порядок для логотипа */
-      }
-    
-      .bucketLogo {
-        order: 2; 
-       margin: 0;
-    
-      }
+  .gardenLogo {
+    order: 1; /* Устанавливаем порядок для логотипа */
+  }
 
-      .mobileBtn {
-        order: 3;
-       
-      }
+  .bucketLogo {
+    order: 2;
+    margin: 0;
+  }
 
-      .mainNavigation {
-        margin: 0px;
-      }
+  .mobileBtn {
+    order: 3;
+  }
 
-      .navigationWrapper {
-        justify-content: flex-start;
-      }
+  .mainNavigation {
+    margin: 0px;
+  }
 
+  .navigationWrapper {
+    justify-content: flex-start;
+  }
 
-      .bucket {
-        margin-left: auto;
-        margin-right: 50px;
-      }
+  .bucket {
+    margin-left: auto;
+    margin-right: 50px;
+  }
 }
 
 /* ALL in */
-@media (min-width: 480px)  {
-    .mobileBtmSec {
-        display: none;
-    }
-    .mainNavigationList {
-        padding-top: 0px;
-        gap: 20px;
-    }   
+@media (min-width: 480px) {
+  .mobileBtmSec {
+    display: none;
+  }
+  .mainNavigationList {
+    padding-top: 0px;
+    gap: 20px;
+  }
 }
 
-@media (min-width:600px) {
-    .gardenLogo {
-        margin: 20px 0px 30px 20px;
-        width: 50px;
-      }
+@media (min-width: 600px) {
+  .gardenLogo {
+    margin: 20px 0px 30px 20px;
+    width: 50px;
+  }
 }
 
 /* TABS */
-@media (min-width: 480px) and (max-width:776px) {
+@media (min-width: 480px) and (max-width: 776px) {
+  .mainNavigation {
+    margin: 54px auto 48px auto;
+  }
 
-    .mainNavigation {
-        margin: 54px auto 48px auto;
-    }
+  .bucketLogo {
+    margin: 36px auto 31px auto;
+  }
 
-    .bucketLogo {
-        margin: 36px auto 31px auto;
-      }
+  .gardenLogo {
+    margin: 20px 0px 30px 5px;
+    width: 50px;
+  }
 
-      .gardenLogo {
-        margin: 20px 0px 30px 5px;
-        width: 50px;
-      }
+  .navigationWrapper {
+    justify-content: initial;
+  }
 
-      .navigationWrapper {
-        justify-content: initial;
-      }
-
-      .headerText {
-        font-size: 15px;
-      }
-      
+  .headerText {
+    font-size: 15px;
+  }
 }
 
+@media (min-width: 776px) {
+  .mainNavigation {
+    margin: 54px auto 48px auto;
+  }
 
-@media (min-width:776px)  {
-    .mainNavigation {
-        margin: 54px auto 48px auto;
-    }
+  .bucketLogo {
+    margin: 41px 40px 31px auto;
+  }
 
-    .bucketLogo {
-        margin: 41px 40px 31px auto;
-    }
+  .gardenLogo {
+    width: 70px;
+  }
 
-    .gardenLogo {
-        width: 70px;
-    }
-    
-    .mainNavigationList {
-        gap: 36px;
-    }
+  .mainNavigationList {
+    gap: 36px;
+  }
 }

@@ -1,0 +1,43 @@
+.categoryBtn {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--radius-small, 6px);
+  border: 1px solid var(--grey-divider, #ddd);
+  background: white;
+  height: 36px;
+  /* margin: 20px auto; */
+}
+
+.categoryBtnDescription {
+  color: var(--txt-grey, #8b8b8b);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 126%;
+  text-decoration: none;
+}
+
+.CategoryTextWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 80px 40px 80px 40px;
+}
+
+.line {
+  width: 16px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.toolsAndEquipmentText {
+  color: var(--txt-black, #282828);
+  font-family: "Montserrat", sans-serif;
+  font-size: 64px;
+
+  font-weight: 700;
+  line-height: 110%;
+}
