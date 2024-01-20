@@ -25,6 +25,7 @@ function App() {
             <Route path="/category" component={Categorys} />
             <Route path="/single-product" component={SingleProduct} />
             <Route path="/goods-page" component={GoodsPage} />
+            <Route path="*" element={<h3>Loading...</h3>} />
             <Redirect from="/" to="/main" />
           </Switch>
           <GoodsFromCategory />
