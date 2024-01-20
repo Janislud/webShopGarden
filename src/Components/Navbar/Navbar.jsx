@@ -85,14 +85,14 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <a
+              <Link
                 className={`${classes.headerText} ${
                   theme === "light" ? classes.lightTheme : classes.darkTheme
                 }`}
-                href="#"
+                to="/all-sales"
               >
                 All sales
-              </a>
+              </Link>
             </li>
           </ul>
 
