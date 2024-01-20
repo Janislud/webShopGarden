@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useApi } from "../../contexts";
-import classes from "../GoodsPageCategory/goodsPage.module.css";
+import classes from "../AllProducts/allProducts.module.css";
 
 export const AllProducts = () => {
   const [sales, setSales] = useState([]);
@@ -12,7 +12,6 @@ export const AllProducts = () => {
       try {
         const response = await fetch("http://localhost:3333/products/all");
         const data = await response.json();
-        console.log(data);
         setSales(data);
       } catch (error) {
         console.log("Error fetching product list");
@@ -38,7 +37,7 @@ export const AllProducts = () => {
         <div className={classes.line}></div>
 
         <button className={classes.categoryBtn}>
-          <Link className={classes.categoryBtnDescription} to={"/category"}>
+          <Link className={classes.categoryBtnDescription} to={"/all-products"}>
             {"All Products"}
           </Link>
         </button>

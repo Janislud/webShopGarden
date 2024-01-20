@@ -103,11 +103,11 @@ const Navbar = () => {
             {theme === "light" ? "Light Theme" : "Dark Theme"}
           </button>
         </nav>
-        <a
+        <Link
           className={`${classes.bucket} ${
             theme === "light" ? classes.lightTheme : classes.darkTheme
           }`}
-          href="#"
+          to="/bucket"
         >
           <img
             className={`${classes.bucketLogo} ${
@@ -116,7 +116,7 @@ const Navbar = () => {
             src={theme === "light" ? bucketLogo : bucketLogoWhite}
             alt=""
           />
-        </a>
+        </Link>
       </div>
     </header>
   );
