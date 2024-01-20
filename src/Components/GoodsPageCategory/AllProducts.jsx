@@ -3,7 +3,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useApi } from "../../contexts";
 import classes from "../GoodsPageCategory/goodsPage.module.css";
 
-export const GoodsPage = () => {
+export const AllProducts = () => {
   const [sales, setSales] = useState([]);
   const { theme } = useApi();
 
@@ -22,10 +22,12 @@ export const GoodsPage = () => {
     fetchSales();
   }, []);
 
-  const discountedSales = sales.filter((sale) => sale.discont_price !== null);
-
   return (
-    <div className={classes.goodsPageWrapper}>
+    <div
+      className={`${classes.goodsPageWrapper} ${
+        theme === "light" ? classes.lightTheme : classes.darkTheme
+      }`}
+    >
       <div className={classes.CategoryTextWrapper}>
         <button className={classes.categoryBtn}>
           <Link className={classes.categoryBtnDescription} to={"/main"}>
@@ -37,28 +39,29 @@ export const GoodsPage = () => {
 
         <button className={classes.categoryBtn}>
           <Link className={classes.categoryBtnDescription} to={"/category"}>
-            {"Categoris"}
-          </Link>
-        </button>
-
-        <div className={classes.line}></div>
-
-        <button className={classes.categoryBtn}>
-          <Link className={classes.categoryBtnDescription} to={"/goods-page"}>
-            {"Tools and equipment"}
+            {"All Products"}
           </Link>
         </button>
       </div>
 
       <div>
-        <h2 className={classes.toolsAndEquipmentText}>
-          Flowers and decorations
+        <h2
+          className={`${classes.toolsAndEquipmentText} ${
+            theme === "light" ? classes.lightTheme : classes.darkTheme
+          }`}
+        >
+          All products
         </h2>
       </div>
 
       <div className={classes.inputsWrapper}>
         <div className={classes.inputFromToWrapper}>
-          <label className={classes.priceLable} for="number">
+          <label
+            className={`${classes.priceLable} ${
+              theme === "light" ? classes.lightTheme : classes.darkTheme
+            }`}
+            for="number"
+          >
             Price
           </label>
           <input
@@ -74,7 +77,9 @@ export const GoodsPage = () => {
         </div>
         <div className={classes.discountItemsWrapper}>
           <label
-            className={classes.discountItemsLable}
+            className={`${classes.discountItemsLable} ${
+              theme === "light" ? classes.lightTheme : classes.darkTheme
+            }`}
             htmlFor="discountCheckbox"
             for="checkbox"
           >
@@ -88,7 +93,12 @@ export const GoodsPage = () => {
         </div>
 
         <div className={classes.sortedWrapper}>
-          <label className={classes.sortedLable} htmlFor="sorted">
+          <label
+            className={`${classes.sortedLable} ${
+              theme === "light" ? classes.lightTheme : classes.darkTheme
+            }`}
+            htmlFor="sorted"
+          >
             Sorted
           </label>
           <select
@@ -111,7 +121,7 @@ export const GoodsPage = () => {
           <Link
             key={sale.id}
             className={classes.saleCard}
-            to={`/single-product/${sale.id}`}
+            to={`/all-products/${sale.id}`}
           >
             <div className={classes.saleBlock}>
               {sale.price &&
@@ -154,9 +164,12 @@ export const GoodsPage = () => {
                 </p>
               ) : sale.price !== null ? (
                 <p
-                  className={
+                  className={`${
                     sale.price ? classes.realPriceWithOutAnyDiscount : ""
+                  } ${
+                    theme === "light" ? classes.lightTheme : classes.darkTheme
                   }
+                  `}
                 >
                   ${sale.price}
                 </p>
