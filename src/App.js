@@ -8,7 +8,6 @@ import Categorys from "./Pages/CategoryPage";
 import { ErrorPage } from "./Pages/ErrorPage";
 import { MainBucketPage } from "./Pages/MainBucketPage";
 import Main from "./Pages/MainPage";
-import { ProductsFromCategoryPage } from "./Pages/ProductsFromCategoryPage";
 import { ApiProvider } from "./contexts";
 
 function App() {
@@ -18,7 +17,8 @@ function App() {
         <div className="App">
           <Header />
           <Switch>
-            <Route path="/main" component={Main} />
+            {/* <Route path="/" component={Main} /> */}
+            <Route path="/" component={Main} />
             <Route path="/category" component={Categorys} />
             <Route path="/single-product" component={SingleProduct} />
             <Route path="/all-products" component={GoodsFromCategory} />
@@ -27,7 +27,7 @@ function App() {
             <Route path="*" element={<h3>Loading...</h3>} />
           </Switch>
 
-          <ProductsFromCategoryPage />
+          {/* <ProductsFromCategoryPage /> */}
 
           <Footer />
         </div>
