@@ -43,7 +43,10 @@ export const AllProducts = () => {
         <div className={classes.line}></div>
 
         <button className={classes.categoryBtn}>
-          <Link className={classes.categoryBtnDescription} to={"/all-products"}>
+          <Link
+            className={classes.categoryBtnDescription}
+            to={"/all-products/decoration"}
+          >
             {"Decoration"}
           </Link>
         </button>

@@ -21,6 +21,13 @@ export const Bucket = () => {
           </Link>
         </button>
       </div>
+
+      <div className={classes.shoppingCardWrapper}>
+        <div>
+          <img src="" alt="" />
+          <p></p>
+        </div>
+      </div>
     </div>
   );
 };

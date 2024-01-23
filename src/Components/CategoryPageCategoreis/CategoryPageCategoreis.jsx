@@ -39,6 +39,14 @@ const CategoriesPage = () => {
             {"Categoris"}
           </Link>
         </button>
+
+        <div className={classes.line}></div>
+
+        <button className={classes.categoryBtn}>
+          <Link className={classes.categoryBtnDescription} to="/all-products">
+            {"All Categories"}
+          </Link>
+        </button>
       </div>
 
       {

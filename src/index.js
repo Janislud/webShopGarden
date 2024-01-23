@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import { Bucket } from "./Components/BucketPage/BucketPage";
 import { AllProductPage } from "./Pages/AllProductPage";
 import Categorys from "./Pages/CategoryPage";
 import { ErrorPage } from "./Pages/ErrorPage";
+import { MainBucketPage } from "./Pages/MainBucketPage";
 import Main from "./Pages/MainPage";
+import { ProductsFromCategoryPage } from "./Pages/ProductsFromCategoryPage";
 import SingleProductPage from "./Pages/SingelProductPage";
 
 const router = createBrowserRouter([
@@ -31,14 +32,17 @@ const router = createBrowserRouter([
         path: "/all-products",
         element: <AllProductPage />,
       },
-
+      {
+        path: "/all-products/decoration",
+        element: <ProductsFromCategoryPage />,
+      },
       {
         path: "/single-product/:productId",
         element: <SingleProductPage />,
       },
       {
         path: "/bucket",
-        element: <Bucket />,
+        element: <MainBucketPage />,
       },
     ],
   },

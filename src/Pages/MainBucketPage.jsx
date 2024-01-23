@@ -1,8 +1,15 @@
+import classes from "../Pages/themaContext.module.css";
+import { useApi } from "../themaContext";
 import { Bucket } from "./../Components/BucketPage/BucketPage";
 export const MainBucketPage = () => {
+  const { theme } = useApi();
   return (
-    <div>
+    <main
+      className={`${classes.allSale} ${
+        theme === "light" ? classes.lightTheme : classes.darkTheme
+      }`}
+    >
       <Bucket />
-    </div>
+    </main>
   );
 };

@@ -21,12 +21,10 @@ export const ProductsFromCategory = () => {
 
   const gardenProducts = allProduct.filter((sale) => sale.categoryId === 3);
 
+  const themeClass = theme === "light" ? classes.lightTheme : classes.darkTheme;
+
   return (
-    <div
-      className={`${classes.goodsPageWrapper} ${
-        theme === "light" ? classes.lightTheme : classes.darkTheme
-      }`}
-    >
+    <main className={`${classes.goodsPageWrapper} ${themeClass}`}>
       <div className={classes.CategoryTextWrapper}>
         <button className={classes.categoryBtn}>
           <Link className={classes.categoryBtnDescription} to={"/main"}>
@@ -37,7 +35,7 @@ export const ProductsFromCategory = () => {
         <div className={classes.line}></div>
 
         <button className={classes.categoryBtn}>
-          <Link className={classes.categoryBtnDescription} to={"/category"}>
+          <Link className={classes.categoryBtnDescription} to={"/all-products"}>
             {"All Products"}
           </Link>
         </button>
@@ -55,23 +53,14 @@ export const ProductsFromCategory = () => {
       </div>
 
       <div>
-        <h2
-          className={`${classes.toolsAndEquipmentText} ${
-            theme === "light" ? classes.lightTheme : classes.darkTheme
-          }`}
-        >
+        <h2 className={`${classes.toolsAndEquipmentText} ${themeClass}`}>
           Decoration
         </h2>
       </div>
 
-      <div className={classes.inputsWrapper}>
+      <div className={`${classes.inputsWrapper} ${themeClass}`}>
         <div className={classes.inputFromToWrapper}>
-          <label
-            className={`${classes.priceLable} ${
-              theme === "light" ? classes.lightTheme : classes.darkTheme
-            }`}
-            for="number"
-          >
+          <label className={`${classes.priceLable} ${themeClass}`} for="number">
             Price
           </label>
           <input
@@ -87,9 +76,7 @@ export const ProductsFromCategory = () => {
         </div>
         <div className={classes.discountItemsWrapper}>
           <label
-            className={`${classes.discountItemsLable} ${
-              theme === "light" ? classes.lightTheme : classes.darkTheme
-            }`}
+            className={`${classes.discountItemsLable} ${themeClass}`}
             htmlFor="discountCheckbox"
             for="checkbox"
           >
@@ -104,9 +91,7 @@ export const ProductsFromCategory = () => {
 
         <div className={classes.sortedWrapper}>
           <label
-            className={`${classes.sortedLable} ${
-              theme === "light" ? classes.lightTheme : classes.darkTheme
-            }`}
+            className={`${classes.sortedLable} ${themeClass}`}
             htmlFor="sorted"
           >
             Sorted
@@ -145,20 +130,12 @@ export const ProductsFromCategory = () => {
               src={`http://localhost:3333${sale.image}`}
               alt={sale.title}
             />
-            <h2
-              className={`${classes.saleCardText} ${
-                theme === "light" ? classes.lightTheme : classes.darkTheme
-              }`}
-            >
+            <h2 className={`${classes.saleCardText} ${themeClass}`}>
               {sale.title}
             </h2>
 
             <div className={classes.salePriceWrapper}>
-              <p
-                className={`${classes.realPrice} ${
-                  theme === "light" ? classes.lightTheme : classes.darkTheme
-                }`}
-              >
+              <p className={`${classes.realPrice} ${themeClass}`}>
                 {sale.discont_price !== null ? `$${sale.discont_price}` : ""}
               </p>
 
@@ -176,9 +153,7 @@ export const ProductsFromCategory = () => {
                 <p
                   className={`${
                     sale.price ? classes.realPriceWithOutAnyDiscount : ""
-                  } ${
-                    theme === "light" ? classes.lightTheme : classes.darkTheme
-                  }
+                  } ${themeClass}
                   `}
                 >
                   ${sale.price}
@@ -188,6 +163,6 @@ export const ProductsFromCategory = () => {
           </Link>
         ))}
       </div>
-    </div>
+    </main>
   );
 };

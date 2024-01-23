@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { Link } from "react-router-dom";
 
+import { NavLink, useLocation } from "react-router-dom";
 import { useApi } from "../../themaContext";
 import bucketLogoWhite from "../Media/Header-media/bucket-icon-white.svg";
 import bucketLogo from "../Media/Header-media/bucket-icon.svg";
@@ -11,6 +11,7 @@ import classes from "./navbar.module.css";
 const Navbar = () => {
   const [navigation, setNavigation] = useState(false);
   const { theme, toggleTheme } = useApi();
+  const location = useLocation();
 
   const toggleNavigation = () => {
     setNavigation(!navigation);
@@ -49,37 +50,61 @@ const Navbar = () => {
             >
               <AiOutlineClose size={25} />
             </div>
-            <li className={classes.list}>
-              <Link
-                className={`${classes.headerText} ${themeClass} `}
+            <li className={`${classes.headerText}`}>
+              <NavLink
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? `${classes.pending} ${themeClass}`
+                    : isActive
+                    ? `${classes.active} ${themeClass}`
+                    : `${themeClass}`
+                }
                 to="/main"
               >
                 Main Page
-              </Link>
+              </NavLink>
             </li>
-            <li>
-              <Link
-                className={`${classes.headerText} ${themeClass}`}
+            <li className={`${classes.headerText}`}>
+              <NavLink
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? `${classes.pending} ${themeClass}`
+                    : isActive
+                    ? `${classes.active} ${themeClass}`
+                    : `${themeClass}`
+                }
                 to="/category"
               >
-                Categories
-              </Link>
+                Category
+              </NavLink>
             </li>
-            <li>
-              <Link
-                className={`${classes.headerText} ${themeClass}`}
+            <li className={`${classes.headerText}`}>
+              <NavLink
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? `${classes.pending} ${themeClass}`
+                    : isActive
+                    ? `${classes.active} ${themeClass}`
+                    : `${themeClass}`
+                }
                 to="/all-products"
               >
-                All products
-              </Link>
+                All Products
+              </NavLink>
             </li>
-            <li>
-              <Link
-                className={`${classes.headerText} ${themeClass}`}
+            <li className={`${classes.headerText}`}>
+              <NavLink
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? `${classes.pending} ${themeClass}`
+                    : isActive
+                    ? `${classes.active} ${themeClass}`
+                    : `${themeClass}`
+                }
                 to="/all-sales"
               >
-                All sales
-              </Link>
+                All Sales
+              </NavLink>
             </li>
           </ul>
 
@@ -90,13 +115,13 @@ const Navbar = () => {
             {theme === "light" ? "Light Theme" : "Dark Theme"}
           </button>
         </nav>
-        <Link className={`${classes.bucket} ${themeClass}`} to="/bucket">
+        <NavLink className={`${classes.bucket} ${themeClass}`} to="/bucket">
           <img
             className={`${classes.bucketLogo} ${themeClass}`}
             src={theme === "light" ? bucketLogo : bucketLogoWhite}
             alt=""
           />
-        </Link>
+        </NavLink>
       </div>
     </header>
   );

@@ -70,3 +70,7 @@
   line-height: 126%;
   text-decoration: none;
 }
+
+.shoppingCardWrapper {
+  display: flex;
+}
