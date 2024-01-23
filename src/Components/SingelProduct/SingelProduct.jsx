@@ -7,7 +7,6 @@ import classes from "./singelProduct.module.css";
 
 const SingleProduct = () => {
   const [categories, setCategories] = useState([]);
-  const [isExpanded, setIsExpanded] = useState(true);
   const [number, setNumber] = useState(1);
   const [space, setSpace] = useState(false);
   const { productId } = useParams();
