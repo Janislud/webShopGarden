@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 import errorPage from "../Components/Media/ErrorPage-media/error-img.svg";
+import { Footer } from "../Layout/Footer";
+import { Header } from "../Layout/Header";
 import classes from "../Pages/errorPage.module.css";
-import { useApi } from "../contexts";
+import { useApi } from "../themaContext";
+
 export const ErrorPage = () => {
   const { theme } = useApi();
   return (
@@ -10,6 +13,7 @@ export const ErrorPage = () => {
         theme === "light" ? classes.lightTheme : classes.darkTheme
       }`}
     >
+      <Header />
       <div className={classes.imgWithTextWrap}>
         <img className={classes.erroImg} src={errorPage} alt="page-not-found" />
         <h2
@@ -35,6 +39,7 @@ export const ErrorPage = () => {
           </Link>
         </button>
       </div>
+      <Footer />
     </div>
   );
 };

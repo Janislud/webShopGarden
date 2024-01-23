@@ -1,8 +1,11 @@
 import React, { createContext, useContext, useState } from "react";
 
-export const ApiContext = createContext();
+export const ThemaContext = createContext({
+  theme: "light",
+  toggleTheme: () => {},
+});
 
-export const ApiProvider = ({ children }) => {
+export const ThemaProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
@@ -10,12 +13,12 @@ export const ApiProvider = ({ children }) => {
   };
 
   return (
-    <ApiContext.Provider value={{ theme, toggleTheme }}>
+    <ThemaContext.Provider value={{ theme, toggleTheme }}>
       {children}
-    </ApiContext.Provider>
+    </ThemaContext.Provider>
   );
 };
 
 export const useApi = () => {
-  return useContext(ApiContext);
+  return useContext(ThemaContext);
 };

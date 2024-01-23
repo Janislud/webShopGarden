@@ -1,6 +1,6 @@
 import CategoriesPage from "../Components/CategoryPageCategoreis/CategoryPageCategoreis";
-import { useApi } from "../contexts";
-import classes from "../Pages/categoryPage.module.css";
+import classes from "../Pages/themaContext.module.css";
+import { useApi } from "../themaContext";
 
 const Categorys = () => {
   const { theme } = useApi();

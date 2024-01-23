@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { useApi } from "../../contexts";
+import { Link } from "react-router-dom";
+import { useApi } from "../../themaContext";
 import classes from "../ProductsFromCategory/productsFromCategory.module.css";
 
 export const ProductsFromCategory = () => {
@@ -37,7 +37,7 @@ export const ProductsFromCategory = () => {
         <div className={classes.line}></div>
 
         <button className={classes.categoryBtn}>
-          <Link className={classes.categoryBtnDescription} to={"/all-products"}>
+          <Link className={classes.categoryBtnDescription} to={"/category"}>
             {"All Products"}
           </Link>
         </button>
@@ -45,7 +45,10 @@ export const ProductsFromCategory = () => {
         <div className={classes.line}></div>
 
         <button className={classes.categoryBtn}>
-          <Link className={classes.categoryBtnDescription} to={"/all-products"}>
+          <Link
+            className={classes.categoryBtnDescription}
+            to="/all-products/decoration"
+          >
             {"Decoration"}
           </Link>
         </button>

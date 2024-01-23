@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { useApi } from "../../contexts";
+import { Link } from "react-router-dom";
+import { useApi } from "../../themaContext";
 import classes from "../AllProducts/allProducts.module.css";
 
 export const AllProducts = () => {
@@ -21,12 +21,10 @@ export const AllProducts = () => {
     fetchSales();
   }, []);
 
+  const themeClass = theme === "light" ? classes.lightTheme : classes.darkTheme;
+
   return (
-    <div
-      className={`${classes.goodsPageWrapper} ${
-        theme === "light" ? classes.lightTheme : classes.darkTheme
-      }`}
-    >
+    <div className={`${classes.goodsPageWrapper} ${themeClass}`}>
       <div className={classes.CategoryTextWrapper}>
         <button className={classes.categoryBtn}>
           <Link className={classes.categoryBtnDescription} to={"/main"}>
@@ -41,14 +39,18 @@ export const AllProducts = () => {
             {"All Products"}
           </Link>
         </button>
+
+        <div className={classes.line}></div>
+
+        <button className={classes.categoryBtn}>
+          <Link className={classes.categoryBtnDescription} to={"/all-products"}>
+            {"Decoration"}
+          </Link>
+        </button>
       </div>
 
       <div>
-        <h2
-          className={`${classes.toolsAndEquipmentText} ${
-            theme === "light" ? classes.lightTheme : classes.darkTheme
-          }`}
-        >
+        <h2 className={`${classes.toolsAndEquipmentText} ${themeClass}`}>
           All products
         </h2>
       </div>
@@ -56,10 +58,8 @@ export const AllProducts = () => {
       <div className={classes.inputsWrapper}>
         <div className={classes.inputFromToWrapper}>
           <label
-            className={`${classes.priceLable} ${
-              theme === "light" ? classes.lightTheme : classes.darkTheme
-            }`}
-            for="number"
+            htmlFor="number"
+            className={`${classes.priceLable} ${themeClass}`}
           >
             Price
           </label>
@@ -76,11 +76,8 @@ export const AllProducts = () => {
         </div>
         <div className={classes.discountItemsWrapper}>
           <label
-            className={`${classes.discountItemsLable} ${
-              theme === "light" ? classes.lightTheme : classes.darkTheme
-            }`}
-            htmlFor="discountCheckbox"
-            for="checkbox"
+            className={`${classes.discountItemsLable} ${themeClass}`}
+            htmlFor="checkbox"
           >
             Discounted items
           </label>
@@ -93,9 +90,7 @@ export const AllProducts = () => {
 
         <div className={classes.sortedWrapper}>
           <label
-            className={`${classes.sortedLable} ${
-              theme === "light" ? classes.lightTheme : classes.darkTheme
-            }`}
+            className={`${classes.sortedLable} ${themeClass}`}
             htmlFor="sorted"
           >
             Sorted
@@ -134,20 +129,12 @@ export const AllProducts = () => {
               src={`http://localhost:3333${sale.image}`}
               alt={sale.title}
             />
-            <h2
-              className={`${classes.saleCardText} ${
-                theme === "light" ? classes.lightTheme : classes.darkTheme
-              }`}
-            >
+            <h2 className={`${classes.saleCardText} ${themeClass}`}>
               {sale.title}
             </h2>
 
             <div className={classes.salePriceWrapper}>
-              <p
-                className={`${classes.realPrice} ${
-                  theme === "light" ? classes.lightTheme : classes.darkTheme
-                }`}
-              >
+              <p className={`${classes.realPrice} ${themeClass}`}>
                 {sale.discont_price !== null ? `$${sale.discont_price}` : ""}
               </p>
 
@@ -165,9 +152,7 @@ export const AllProducts = () => {
                 <p
                   className={`${
                     sale.price ? classes.realPriceWithOutAnyDiscount : ""
-                  } ${
-                    theme === "light" ? classes.lightTheme : classes.darkTheme
-                  }
+                  } ${themeClass}
                   `}
                 >
                   ${sale.price}

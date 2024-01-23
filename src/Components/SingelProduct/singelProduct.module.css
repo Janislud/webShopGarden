@@ -1,13 +1,13 @@
 .CategoryWrapper {
   max-width: 1440px;
   margin: 0 auto;
-  margin-bottom: 80px;
+  padding-bottom: 80px;
 }
 
 .CategoryTextWrapper {
   display: flex;
   flex-wrap: wrap;
-  margin: 80px 40px 80px 40px;
+  padding: 80px 40px 80px 40px;
 }
 .categoryDescription {
   color: var(--txt-black, #282828);
@@ -242,6 +242,16 @@
   background: none;
   border: none;
   margin-top: 16px;
+}
+
+.lightTheme {
+  background-color: #fff;
+  color: #000;
+}
+
+.darkTheme {
+  background-color: #333;
+  color: #fff;
 }
 
 .clamp {

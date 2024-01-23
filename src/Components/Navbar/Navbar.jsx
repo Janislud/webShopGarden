@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { useApi } from "../../contexts";
+
+import { useApi } from "../../themaContext";
 import bucketLogoWhite from "../Media/Header-media/bucket-icon-white.svg";
 import bucketLogo from "../Media/Header-media/bucket-icon.svg";
 import gardenLogo from "../Media/Header-media/garden-shop-logo.svg";
@@ -20,17 +21,11 @@ const Navbar = () => {
     console.log("Theme switched:", theme);
   };
 
+  const themeClass = theme === "light" ? classes.lightTheme : classes.darkTheme;
+
   return (
-    <header
-      className={`${classes.header} ${
-        theme === "light" ? classes.lightTheme : classes.darkTheme
-      }`}
-    >
-      <div
-        className={`${classes.navigationWrapper} ${
-          theme === "light" ? classes.lightTheme : classes.darkTheme
-        }`}
-      >
+    <header className={`${classes.header} ${themeClass}`}>
+      <div className={`${classes.navigationWrapper} ${themeClass}`}>
         <a href="#">
           <img className={classes.gardenLogo} src={gardenLogo} alt="" />
         </a>
@@ -56,9 +51,7 @@ const Navbar = () => {
             </div>
             <li className={classes.list}>
               <Link
-                className={`${classes.headerText} ${
-                  theme === "light" ? classes.lightTheme : classes.darkTheme
-                } `}
+                className={`${classes.headerText} ${themeClass} `}
                 to="/main"
               >
                 Main Page
@@ -66,9 +59,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                className={`${classes.headerText} ${
-                  theme === "light" ? classes.lightTheme : classes.darkTheme
-                }`}
+                className={`${classes.headerText} ${themeClass}`}
                 to="/category"
               >
                 Categories
@@ -76,9 +67,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                className={`${classes.headerText} ${
-                  theme === "light" ? classes.lightTheme : classes.darkTheme
-                }`}
+                className={`${classes.headerText} ${themeClass}`}
                 to="/all-products"
               >
                 All products
@@ -86,9 +75,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                className={`${classes.headerText} ${
-                  theme === "light" ? classes.lightTheme : classes.darkTheme
-                }`}
+                className={`${classes.headerText} ${themeClass}`}
                 to="/all-sales"
               >
                 All sales
@@ -103,16 +90,9 @@ const Navbar = () => {
             {theme === "light" ? "Light Theme" : "Dark Theme"}
           </button>
         </nav>
-        <Link
-          className={`${classes.bucket} ${
-            theme === "light" ? classes.lightTheme : classes.darkTheme
-          }`}
-          to="/bucket"
-        >
+        <Link className={`${classes.bucket} ${themeClass}`} to="/bucket">
           <img
-            className={`${classes.bucketLogo} ${
-              theme === "light" ? classes.lightTheme : classes.darkTheme
-            }`}
+            className={`${classes.bucketLogo} ${themeClass}`}
             src={theme === "light" ? bucketLogo : bucketLogoWhite}
             alt=""
           />

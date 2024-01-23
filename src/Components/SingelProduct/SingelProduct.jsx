@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom/cjs/react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useApi } from "../../themaContext";
 import minus from "../Media/SinglePage-media/minus-icon.svg";
 import plus from "../Media/SinglePage-media/plus-icon.svg";
 import classes from "./singelProduct.module.css";
@@ -12,17 +12,20 @@ const SingleProduct = () => {
   const [space, setSpace] = useState(false);
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
+  const { theme } = useApi();
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch("http://localhost:3333/products/all");
+        const response = await fetch(
+          `http://localhost:3333/products/${productId}`
+        );
         const data = await response.json();
         console.log(data);
         setCategories(data);
         setProduct(data);
       } catch (error) {
-        console.log("Error fetching category list");
+        console.log("Error fetching product details");
       }
     };
 
@@ -32,10 +35,6 @@ const SingleProduct = () => {
   if (!product) {
     return <div>Loading...</div>;
   }
-
-  const toggleCategories = () => {
-    setIsExpanded(!isExpanded);
-  };
 
   const handlePlusClick = () => {
     setNumber((prevAge) => prevAge + 1);
@@ -47,31 +46,33 @@ const SingleProduct = () => {
     }
   };
 
-  const switcherText = () => {
+  const switcherText = (event) => {
     console.log("work");
     event.preventDefault();
     setSpace((prevSpace) => !prevSpace);
   };
 
+  const themeClass = theme === "light" ? classes.lightTheme : classes.darkTheme;
+
   return (
     <div className={classes.CategoryWrapper}>
       <div className={classes.CategoryTextWrapper}>
-        <button className={classes.categoryBtn} onClick={toggleCategories}>
+        <button className={classes.categoryBtn}>
           <Link className={classes.categoryBtnDescription} to="/main">
-            {isExpanded ? "Main Page" : "Main Page"}
+            {"Main Page"}
           </Link>
         </button>
 
         <div className={classes.line}></div>
 
-        <button className={classes.categoryBtn} onClick={toggleCategories}>
-          <a className={classes.categoryBtnDescription} href="#">
-            {isExpanded ? "Categoris" : "Categoris"}
-          </a>
+        <button className={classes.categoryBtn}>
+          <Link className={classes.categoryBtnDescription} to="/category">
+            {"Categoris"}
+          </Link>
         </button>
       </div>
 
-      {isExpanded && (
+      {
         <div className={classes.categoryCardWrapper}>
           {categories.slice(0, 1).map((singleProduct) => (
             <div key={singleProduct.id} className={classes.categoryCard}>
@@ -81,11 +82,13 @@ const SingleProduct = () => {
                 alt={singleProduct.title}
               />
               <div className={classes.singleCardDescription}>
-                <h2 className={classes.categoryCardText}>
+                <h2 className={`${classes.categoryCardText} ${themeClass}`}>
                   {singleProduct.title}
                 </h2>
                 <div className={classes.PriceDiscountWrapper}>
-                  <p className={classes.textPriceWithDiscount}>
+                  <p
+                    className={`${classes.textPriceWithDiscount} ${themeClass}`}
+                  >
                     ${singleProduct.discont_price}
                   </p>
                   <p className={classes.textPriceFullPrice}>
@@ -112,7 +115,9 @@ const SingleProduct = () => {
                       alt="minus-icon"
                     ></img>
                   </button>
-                  <p className={classes.canculateCountText}>{number}</p>
+                  <p className={`${classes.canculateCountText} ${themeClass}`}>
+                    {number}
+                  </p>
                   <button className={classes.btnPlus} onClick={handlePlusClick}>
                     <img
                       src={plus}
@@ -124,19 +129,21 @@ const SingleProduct = () => {
                     <p className={classes.btnAddToCardText}>Add to Card</p>
                   </button>
                 </div>
-                <h3 className={classes.productTextDescriptionMain}>
+                <h3
+                  className={`${classes.productTextDescriptionMain} ${themeClass}`}
+                >
                   Description
                 </h3>
                 <p
                   className={`${classes.productTextDescriptionMain} ${
                     space ? "" : classes.clamp
-                  }`}
+                  } ${themeClass}`}
                 >
                   {singleProduct.description}
                 </p>
                 <button
                   onClick={switcherText}
-                  className={classes.productTextDescriptionReadMore}
+                  className={`${classes.productTextDescriptionReadMore} ${themeClass}`}
                 >
                   Read more
                 </button>
@@ -144,13 +151,10 @@ const SingleProduct = () => {
             </div>
           ))}
         </div>
-      )}
-      <button
-        className={classes.categoryBtnAdaptive}
-        onClick={toggleCategories}
-      >
+      }
+      <button className={classes.categoryBtnAdaptive}>
         <a className={classes.categoryBtnDescription} href="#">
-          {isExpanded ? "All Categoris" : "All Categoris"}
+          {"All Categoris"}
         </a>
       </button>
     </div>

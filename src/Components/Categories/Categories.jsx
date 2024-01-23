@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom";
-import { useApi } from "../../contexts";
+import { Link } from "react-router-dom";
+import { useApi } from "../../themaContext";
 import classes from "./category.module.css";
 
 const Categories = () => {
@@ -22,14 +22,12 @@ const Categories = () => {
     fetchCategories();
   }, []);
 
+  const themeClass = theme === "light" ? classes.lightTheme : classes.darkTheme;
+
   return (
     <div className={classes.CategoryWrapper}>
       <div className={classes.CategoryTextWrapper}>
-        <h2
-          className={`${classes.categoryDescription} ${
-            theme === "light" ? classes.lightTheme : classes.darkTheme
-          }`}
-        >
+        <h2 className={`${classes.categoryDescription} ${themeClass}`}>
           Categories
         </h2>
 
@@ -51,11 +49,7 @@ const Categories = () => {
                 src={`http://localhost:3333${category.image}`}
                 alt={category.title}
               />
-              <h2
-                className={`${classes.categoryCardText} ${
-                  theme === "light" ? classes.lightTheme : classes.darkTheme
-                } `}
-              >
+              <h2 className={`${classes.categoryCardText} ${themeClass} `}>
                 {category.title}
               </h2>
             </Link>

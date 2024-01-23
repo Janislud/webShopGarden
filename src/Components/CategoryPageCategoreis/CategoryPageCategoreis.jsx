@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { useApi } from "../../contexts";
+
+import { Link } from "react-router-dom";
+import { useApi } from "../../themaContext";
 import classes from "./categoryPageCategories.module.css";
 
 const CategoriesPage = () => {
@@ -20,15 +21,13 @@ const CategoriesPage = () => {
     fetchCategories();
   }, []);
 
+  const themeClass = theme === "light" ? classes.lightTheme : classes.darkTheme;
+
   return (
-    <div
-      className={`${classes.CategoryWrapper} ${
-        theme === "light" ? classes.lightTheme : classes.darkTheme
-      }`}
-    >
+    <div className={`${classes.CategoryWrapper} ${themeClass}`}>
       <div className={classes.CategoryTextWrapper}>
         <button className={classes.categoryBtn}>
-          <Link className={classes.categoryBtnDescription} to={"/main"}>
+          <Link className={classes.categoryBtnDescription} to="/main">
             {"Main Page"}
           </Link>
         </button>
@@ -36,18 +35,14 @@ const CategoriesPage = () => {
         <div className={classes.line}></div>
 
         <button className={classes.categoryBtn}>
-          <Link className={classes.categoryBtnDescription} to={"/category"}>
+          <Link className={classes.categoryBtnDescription} to="/category">
             {"Categoris"}
           </Link>
         </button>
       </div>
 
       {
-        <div
-          className={`${classes.categoryCardWrapper} ${
-            theme === "light" ? classes.lightTheme : classes.darkTheme
-          }`}
-        >
+        <div className={`${classes.categoryCardWrapper} ${themeClass}`}>
           {categories.slice(0, 5).map((category) => (
             <div key={category.id} className={classes.categoryCard}>
               <img
@@ -55,11 +50,7 @@ const CategoriesPage = () => {
                 src={`http://localhost:3333${category.image}`}
                 alt={category.title}
               />
-              <h2
-                className={`${classes.categoryCardText} ${
-                  theme === "light" ? classes.lightTheme : classes.darkTheme
-                }`}
-              >
+              <h2 className={`${classes.categoryCardText} ${themeClass}`}>
                 {category.title}
               </h2>
             </div>

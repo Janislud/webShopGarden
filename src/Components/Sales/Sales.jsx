@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom";
-import { useApi } from "../../contexts";
+
+import { Link } from "react-router-dom";
+import { useApi } from "../../themaContext";
 import classes from "../Sales/sales.module.css";
 
 const Sales = () => {
@@ -37,9 +38,9 @@ const Sales = () => {
         </h2>
         <div className={classes.salesLine}></div>
         <button className={classes.saleBtn} type="button">
-          <a className={classes.categoryBtnDescription} href="#">
+          <Link className={classes.categoryBtnDescription} to={"/all-sales"}>
             {"All Sales"}
-          </a>
+          </Link>
         </button>
       </div>
 

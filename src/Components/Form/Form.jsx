@@ -38,7 +38,7 @@ const FormDiscount = () => {
         />
         <div className={classes.formWrapper}>
           <form onSubmit={handleSubmit}>
-            <label className={classes.formLabel}>
+            <label htmlFor="name" className={classes.formLabel}>
               <input
                 className={classes.formInput}
                 placeholder="Name"
@@ -48,7 +48,7 @@ const FormDiscount = () => {
                 onChange={nameReturn}
               />
             </label>
-            <label className={classes.formLabel}>
+            <label htmlFor="phone" className={classes.formLabel}>
               <input
                 className={classes.formInput}
                 placeholder="Phone"
@@ -58,7 +58,7 @@ const FormDiscount = () => {
                 onChange={phoneReturn}
               />
             </label>
-            <label className={classes.formLabel}>
+            <label htmlFor="email" className={classes.formLabel}>
               <input
                 className={classes.formInput}
                 placeholder="Email"

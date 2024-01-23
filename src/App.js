@@ -1,39 +1,18 @@
-import React from "react";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import SingleProduct from "./Components/SingelProduct/SingelProduct";
-import Footer from "./Layout/Footer";
-import Header from "./Layout/Header";
-import { GoodsFromCategory } from "./Pages/AllProductPage";
-import Categorys from "./Pages/CategoryPage";
-import { ErrorPage } from "./Pages/ErrorPage";
-import { MainBucketPage } from "./Pages/MainBucketPage";
-import Main from "./Pages/MainPage";
-import { ApiProvider } from "./contexts";
+import { Outlet } from "react-router-dom";
+import { Footer } from "./Layout/Footer";
+import { Header } from "./Layout/Header";
+import { ThemaProvider } from "./themaContext";
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <ApiProvider>
-        <div className="App">
-          <Header />
-          <Switch>
-            {/* <Route path="/" component={Main} /> */}
-            <Route path="/" component={Main} />
-            <Route path="/category" component={Categorys} />
-            <Route path="/single-product" component={SingleProduct} />
-            <Route path="/all-products" component={GoodsFromCategory} />
-            <Route path="/all-sales" component={ErrorPage} />
-            <Route path="/bucket" component={MainBucketPage} />
-            <Route path="*" element={<h3>Loading...</h3>} />
-          </Switch>
-
-          {/* <ProductsFromCategoryPage /> */}
-
-          <Footer />
-        </div>
-      </ApiProvider>
-    </Router>
+    <ThemaProvider>
+      <div className="App">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    </ThemaProvider>
   );
-}
+};
 
 export default App;

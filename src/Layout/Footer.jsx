@@ -2,10 +2,10 @@ import React from "react";
 import Map from "../Components/Map/Map";
 import instagram from "../Components/Media/Footer-media/instagram-icon.svg";
 import whatsap from "../Components/Media/Footer-media/whatsapp-icon.svg";
-import { useApi } from "../contexts";
+import { useApi } from "../themaContext";
 import classes from "./footer.module.css";
 
-const Footer = () => {
+export const Footer = () => {
   const { theme } = useApi();
   return (
     <footer
@@ -71,5 +71,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

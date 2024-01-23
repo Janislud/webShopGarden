@@ -1,8 +1,8 @@
 import { AllProducts } from "../Components/AllProducts/AllProducts";
-import classes from "../Pages/allProductPage.module.css";
-import { useApi } from "../contexts";
+import classes from "../Pages/themaContext.module.css";
+import { useApi } from "../themaContext";
 
-export const GoodsFromCategory = () => {
+export const AllProductPage = () => {
   const { theme } = useApi();
   return (
     <main
