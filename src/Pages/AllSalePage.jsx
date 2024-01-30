@@ -1,5 +1,6 @@
+import { AllSales } from "../Components/AllSales/AllSales";
 import classes from "../Pages/themaContext.module.css";
-import { ErrorPage } from "./ErrorPage";
+import { useApi } from "../themaContext";
 
 export const AllSalePage = () => {
   const { theme } = useApi();
@@ -9,7 +10,7 @@ export const AllSalePage = () => {
         theme === "light" ? classes.lightTheme : classes.darkTheme
       }`}
     >
-      <ErrorPage />
+      <AllSales />
     </div>
   );
 };

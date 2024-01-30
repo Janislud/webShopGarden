@@ -36,7 +36,7 @@ const CategoriesPage = () => {
 
         <button className={classes.categoryBtn}>
           <Link className={classes.categoryBtnDescription} to="/category">
-            {"Categoris"}
+            {"Categories"}
           </Link>
         </button>
 

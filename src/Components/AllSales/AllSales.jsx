@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-
 import { Link } from "react-router-dom";
-import { useApi } from "../../themaContext";
-import classes from "../Sales/sales.module.css";
-
-const Sales = () => {
+import classes from "../AllSales/allSales.module.css";
+import { useApi } from "./../../themaContext";
+export const AllSales = () => {
   const [sales, setSales] = useState([]);
+
   const { theme } = useApi();
 
   useEffect(() => {
@@ -27,19 +26,97 @@ const Sales = () => {
 
   return (
     <div className={classes.salesWrapper}>
-      <div className={classes.salesTextWrapper}>
-        <h2 className={`${classes.saleText} ${themeClass}`}>Sale</h2>
-        <div className={classes.salesLine}></div>
-        <button className={classes.saleBtn} type="button">
-          <Link className={classes.categoryBtnDescription} to={"/all-sales"}>
-            {"All Sales"}
+      <div className={classes.CategoryTextWrapper}>
+        <button className={classes.categoryBtn}>
+          <Link className={classes.categoryBtnDescription} to={"/main"}>
+            {"Main Page"}
+          </Link>
+        </button>
+
+        <div className={classes.line}></div>
+
+        <button className={classes.categoryBtn}>
+          <Link className={classes.categoryBtnDescription} to={"/all-products"}>
+            {"All Products"}
+          </Link>
+        </button>
+
+        <div className={classes.line}></div>
+
+        <button className={classes.categoryBtn}>
+          <Link
+            className={classes.categoryBtnDescription}
+            to={"/all-products/decoration"}
+          >
+            {"Decoration"}
           </Link>
         </button>
       </div>
 
+      <div>
+        <h2 className={`${classes.toolsAndEquipmentText} ${themeClass}`}>
+          All Sales
+        </h2>
+      </div>
+
+      <div className={classes.inputsWrapper}>
+        <div className={classes.inputFromToWrapper}>
+          <label
+            htmlFor="number"
+            className={`${classes.priceLable} ${themeClass}`}
+          >
+            Price
+          </label>
+          <input
+            className={classes.priceInputFrom}
+            type="number"
+            placeholder="from"
+          />
+          <input
+            className={classes.priceInputTo}
+            type="number"
+            placeholder="to"
+          />
+        </div>
+        <div className={classes.discountItemsWrapper}>
+          <label
+            className={`${classes.discountItemsLable} ${themeClass}`}
+            htmlFor="checkbox"
+          >
+            Discounted items
+          </label>
+          <input
+            id="discountCheckbox"
+            className={classes.discountItemsInput}
+            type="checkbox"
+          />
+        </div>
+
+        <div className={classes.sortedWrapper}>
+          <label
+            className={`${classes.sortedLable} ${themeClass}`}
+            htmlFor="sorted"
+          >
+            Sorted
+          </label>
+          <select
+            className={classes.selectedForOptionWrapper}
+            id="sorted"
+            type="text"
+          >
+            <option className={classes.optionParams} value="">
+              Ascending
+            </option>
+            <option className={classes.optionParams} value="">
+              Descending
+            </option>
+          </select>
+        </div>
+      </div>
+
       {
         <div className={classes.saleCardWrapper}>
-          {discountedSales.slice(0, 4).map((sale) => (
+          {discountedSales.slice(0, 10).map((sale) => (
             <Link
               key={sale.id}
               className={classes.saleCard}
@@ -98,5 +175,3 @@ const Sales = () => {
     </div>
   );
 };
-
-export default Sales;

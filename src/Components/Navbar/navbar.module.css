@@ -34,6 +34,16 @@ a.active {
   padding-top: 100px;
 }
 
+.sunIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.moonIcon {
+  width: 25px;
+  height: 25px;
+}
+
 .mainNavigationList a {
   text-decoration: none;
 }

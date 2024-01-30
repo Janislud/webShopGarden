@@ -54,7 +54,7 @@ export const AllProducts = () => {
 
       <div>
         <h2 className={`${classes.toolsAndEquipmentText} ${themeClass}`}>
-          All products
+          All Products
         </h2>
       </div>
 

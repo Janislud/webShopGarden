@@ -6,6 +6,8 @@ import { useApi } from "../../themaContext";
 import bucketLogoWhite from "../Media/Header-media/bucket-icon-white.svg";
 import bucketLogo from "../Media/Header-media/bucket-icon.svg";
 import gardenLogo from "../Media/Header-media/garden-shop-logo.svg";
+import moon from "../Media/Header-media/moon-icon.png";
+import sun from "../Media/Header-media/sun-white.png";
 import classes from "./navbar.module.css";
 
 const Navbar = () => {
@@ -110,9 +112,13 @@ const Navbar = () => {
 
           <button
             onClick={toggleThemeSwitch}
-            className={classes.themeSwitcherLight}
+            className={`${classes.themeSwitcherLight} ${themeClass}`}
           >
-            {theme === "light" ? "Light Theme" : "Dark Theme"}
+            {theme === "light" ? (
+              <img className={classes.moonIcon} src={moon} alt="Light Theme" />
+            ) : (
+              <img className={classes.sunIcon} src={sun} alt="Dark Theme" />
+            )}
           </button>
         </nav>
         <NavLink className={`${classes.bucket} ${themeClass}`} to="/bucket">

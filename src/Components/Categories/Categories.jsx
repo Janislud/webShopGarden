@@ -12,7 +12,7 @@ const Categories = () => {
       try {
         const response = await fetch("http://localhost:3333/categories/all");
         const data = await response.json();
-
+        console.log("THIS DATA:", data);
         setCategories(data);
       } catch (error) {
         console.log("Error fetching category list");
@@ -43,7 +43,11 @@ const Categories = () => {
       {
         <div className={classes.categoryCardWrapper}>
           {categories.slice(0, 4).map((category) => (
-            <Link key={category.id} className={classes.categoryCard} to={"#"}>
+            <Link
+              key={category.id}
+              className={classes.categoryCard}
+              to={`/categories/${category.id}`}
+            >
               <img
                 className={classes.categoryImg}
                 src={`http://localhost:3333${category.image}`}

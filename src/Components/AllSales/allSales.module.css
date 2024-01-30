@@ -1,0 +1,356 @@
+.categoryBtn {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--radius-small, 6px);
+  border: 1px solid var(--grey-divider, #ddd);
+  background: white;
+  height: 36px;
+}
+
+.categoryBtnDescription {
+  color: var(--txt-grey, #8b8b8b);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 126%;
+  text-decoration: none;
+}
+
+.CategoryTextWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 80px 40px 80px 0px;
+}
+
+.line {
+  width: 16px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.toolsAndEquipmentText {
+  color: var(--txt-black, #282828);
+  font-family: "Montserrat", sans-serif;
+  font-size: 64px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+.priceLable {
+  color: var(--txt-black, #282828);
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.inputsWrapper {
+  display: flex;
+  height: 36px;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.inputFromToWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.priceInputFrom {
+  border-radius: var(--radius-small, 6px);
+  border: 1px solid var(--grey-divider, #ddd);
+  display: flex;
+  width: 112px;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 10px;
+}
+
+.realPriceWithOutAnyDiscount {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 110%;
+}
+
+.priceInputFrom::placeholder,
+.priceInputTo::placeholder {
+  color: var(--txt-grey, #8b8b8b);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 126%;
+}
+
+.priceInputTo {
+  border-radius: var(--radius-small, 6px);
+  border: 1px solid var(--grey-divider, #ddd);
+  display: flex;
+  width: 112px;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 10px;
+}
+
+.goodsPageWrapper {
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.discountItemsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.discountItemsLable {
+  color: var(--txt-black, #282828);
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.discountItemsInput {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid #ff0000;
+}
+
+.sortedWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sortedLable {
+  color: var(--txt-black, #282828);
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.selectedForOptionWrapper {
+  display: flex;
+  width: 200px;
+  padding: 8px 8px 8px 16px;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-small, 6px);
+  border: 1px solid var(--grey-divider, #ddd);
+}
+
+.optionParams {
+  color: var(--txt-black, #282828);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 126%;
+}
+
+.salesWrapper {
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.salesTextWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px 40px 40px 40px;
+}
+
+.salesLine {
+  border-bottom: 1px solid #ddd;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.saleText {
+  color: var(--txt-black, #282828);
+  font-family: "Montserrat", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 110%;
+  margin-right: 32px;
+}
+
+.saleBtn {
+  border-radius: var(--radius-small, 6px);
+  border: 1px solid var(--grey-divider, #ddd);
+  max-width: 97px;
+  max-height: 36px;
+  margin-top: 30px;
+  background-color: #fff;
+  display: flex;
+  padding: 8px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.saleBtn {
+  color: var(--txt-grey, #8b8b8b);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 126%;
+  text-decoration: none;
+}
+
+.saleCardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+.saleCard {
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  max-width: 315px;
+  text-decoration: none;
+}
+
+.saleCardText {
+  overflow: hidden;
+  color: var(--txt-black, #282828);
+  text-overflow: ellipsis;
+  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 130%;
+  margin: 0px 32px 16px 32px;
+  min-height: 55px;
+}
+
+.salePriceWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  text-align: center;
+  max-width: 252px;
+  margin: 0px 32px 32px 32px;
+}
+
+.realPrice {
+  color: var(--txt-black, #282828);
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 110%;
+}
+
+.firstPrice {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 130%;
+  text-decoration-line: line-through;
+  margin-top: 15px;
+}
+
+.saleImg {
+  max-width: 313px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.saleBlock {
+  position: absolute;
+  margin-left: 240px;
+  margin-top: 16px;
+  background-color: #393;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 130%; /* 26px */
+  letter-spacing: 0.6px;
+}
+
+.saleBtnAdaptive {
+  border-radius: var(--radius-small, 6px);
+  border: 1px solid var(--grey-divider, #ddd);
+  max-width: 97px;
+  max-height: 36px;
+  margin-top: 30px;
+  background-color: #fff;
+  display: flex;
+  padding: 8px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.categoryBtnDescription {
+  color: var(--txt-grey, #8b8b8b);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 126%;
+  text-decoration: none;
+}
+
+.lightTheme {
+  background-color: #fff;
+  color: #000;
+}
+
+.darkTheme {
+  background-color: #333;
+  color: #fff;
+}
+
+.redTheme {
+  color: #e00122;
+}
+.saleBasicTheme {
+  color: var(--txt-grey, #8b8b8b);
+}
+
+@media (min-width: 480px) {
+  .saleBtnAdaptive {
+    display: none;
+    margin-left: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .salesTextWrapper {
+    justify-content: center;
+  }
+  .saleText {
+    font-size: 40px;
+    margin: 0 auto;
+  }
+
+  .salesLine {
+    display: none;
+  }
+  .saleBtn {
+    display: none;
+  }
+
+  .saleBtnAdaptive {
+    margin: 20px auto;
+  }
+}

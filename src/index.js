@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import { AllProductPage } from "./Pages/AllProductPage";
+import { AllSalePage } from "./Pages/AllSalePage";
 import Categorys from "./Pages/CategoryPage";
 import { ErrorPage } from "./Pages/ErrorPage";
 import { MainBucketPage } from "./Pages/MainBucketPage";
@@ -27,10 +28,20 @@ const router = createBrowserRouter([
       {
         path: "/category",
         element: <Categorys />,
+        children: [
+          {
+            path: ":categoryId",
+            element: <SingleProductPage />,
+          },
+        ],
       },
       {
         path: "/all-products",
         element: <AllProductPage />,
+      },
+      {
+        path: "/all-sales",
+        element: <AllSalePage />,
       },
       {
         path: "/all-products/decoration",
