@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import { Link } from "react-router-dom";
 import { useApi } from "../../themaContext";
-import classes from "./categoryPageCategories.module.css";
+import classes from "./categoryPage.module.css";
 
 const CategoriesPage = () => {
   const [categories, setCategories] = useState([]);
@@ -22,6 +21,7 @@ const CategoriesPage = () => {
   }, []);
 
   const themeClass = theme === "light" ? classes.lightTheme : classes.darkTheme;
+  
 
   return (
     <div className={`${classes.CategoryWrapper} ${themeClass}`}>
@@ -52,7 +52,10 @@ const CategoriesPage = () => {
       {
         <div className={`${classes.categoryCardWrapper} ${themeClass}`}>
           {categories.slice(0, 5).map((category) => (
-            <div key={category.id} className={classes.categoryCard}>
+            <Link key={category.id}
+             className={classes.categoryCard}
+             to={`/categories/${category.id}`}
+             >
               <img
                 className={classes.categoryImg}
                 src={`http://localhost:3333${category.image}`}
@@ -61,7 +64,7 @@ const CategoriesPage = () => {
               <h2 className={`${classes.categoryCardText} ${themeClass}`}>
                 {category.title}
               </h2>
-            </div>
+            </Link>
           ))}
         </div>
       }

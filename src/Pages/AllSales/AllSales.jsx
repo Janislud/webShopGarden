@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useApi } from "../../themaContext";
 import classes from "../AllSales/allSales.module.css";
-import { useApi } from "./../../themaContext";
 export const AllSales = () => {
   const [sales, setSales] = useState([]);
 

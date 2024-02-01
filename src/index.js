@@ -2,14 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import { AllProductPage } from "./Pages/AllProductPage";
-import { AllSalePage } from "./Pages/AllSalePage";
-import Categorys from "./Pages/CategoryPage";
-import { ErrorPage } from "./Pages/ErrorPage";
-import { MainBucketPage } from "./Pages/MainBucketPage";
+import CategoriesPage from "./Components/CategoryPage/CategoryPage";
+import { CategoryDecoration } from "./Components/DecorationPage/DecorationPage";
+import SingleProduct from "./Components/SingelProduct/SingelProduct";
+import { AllProducts } from "./Pages/AllProducts/AllProducts";
+import { AllSales } from "./Pages/AllSales/AllSales";
+
+
+import { Cart } from "./Pages/CartPage/CartPage";
+import { ErrorPage } from "./Pages/ErrorPage/ErrorPage";
 import Main from "./Pages/MainPage";
-import { ProductsFromCategoryPage } from "./Pages/ProductsFromCategoryPage";
-import SingleProductPage from "./Pages/SingelProductPage";
 
 const router = createBrowserRouter([
   {
@@ -27,33 +29,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/category",
-        element: <Categorys />,
-        children: [
-          {
-            path: ":categoryId",
-            element: <SingleProductPage />,
-          },
-        ],
+        element: <CategoriesPage />,
       },
       {
         path: "/all-products",
-        element: <AllProductPage />,
+        element: <AllProducts />,
       },
       {
         path: "/all-sales",
-        element: <AllSalePage />,
+        element: <AllSales />,
       },
       {
-        path: "/all-products/decoration",
-        element: <ProductsFromCategoryPage />,
+        path: "/categories/:categoriesId",
+        element: <CategoryDecoration/>,
       },
       {
         path: "/single-product/:productId",
-        element: <SingleProductPage />,
+        element: <SingleProduct />,
       },
       {
-        path: "/bucket",
-        element: <MainBucketPage />,
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

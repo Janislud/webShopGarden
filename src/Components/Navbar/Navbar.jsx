@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useApi } from "../../themaContext";
 import bucketLogoWhite from "../Media/Header-media/bucket-icon-white.svg";
 import bucketLogo from "../Media/Header-media/bucket-icon.svg";
@@ -13,7 +13,7 @@ import classes from "./navbar.module.css";
 const Navbar = () => {
   const [navigation, setNavigation] = useState(false);
   const { theme, toggleTheme } = useApi();
-  const location = useLocation();
+
 
   const toggleNavigation = () => {
     setNavigation(!navigation);
@@ -121,7 +121,7 @@ const Navbar = () => {
             )}
           </button>
         </nav>
-        <NavLink className={`${classes.bucket} ${themeClass}`} to="/bucket">
+        <NavLink className={`${classes.bucket} ${themeClass}`} to="/cart">
           <img
             className={`${classes.bucketLogo} ${themeClass}`}
             src={theme === "light" ? bucketLogo : bucketLogoWhite}

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import errorPage from "../Components/Media/ErrorPage-media/error-img.svg";
-import { Footer } from "../Layout/Footer";
-import { Header } from "../Layout/Header";
-import classes from "../Pages/errorPage.module.css";
-import { useApi } from "../themaContext";
+import errorPage from "../../Components/Media/ErrorPage-media/error-img.svg";
+import { Footer } from "../../Layout/Footer";
+import { Header } from "../../Layout/Header";
+import { useApi } from "../../themaContext";
+import classes from "../ErrorPage/errorPage.module.css";
 
 export const ErrorPage = () => {
   const { theme } = useApi();

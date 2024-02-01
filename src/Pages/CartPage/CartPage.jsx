@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useApi } from "../../themaContext";
-import classes from "../BucketPage/bucketPage.module.css";
-export const Bucket = () => {
+import classes from "../CartPage/cartPage.module.css";
+export const Cart = () => {
   const { theme } = useApi();
 
   const themeClass = theme === "light" ? classes.lightTheme : classes.darkTheme;
